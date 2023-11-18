@@ -1,12 +1,9 @@
 {
-  "name": "id-n-nuevos-comienzos",
+  "name": "nuevos-comienzos-web",
   "version": "1.0.0",
   "private": true,
-  "description": "id-n-nuevos-comienzos",
-  "author": "Marce Persico",
-  "keywords": [
-    "gatsby"
-  ],
+  "description": "Web para Iglesia del Nazareno Nuevos Comienzos",
+  "author": "Alterfreak",
   "scripts": {
     "develop": "gatsby develop",
     "start": "gatsby develop",
