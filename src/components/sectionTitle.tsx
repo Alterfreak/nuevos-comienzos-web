@@ -1,7 +1,15 @@
 import * as React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
-const Wrapper = styled.div``;
+const Wrapper = styled.div<{ center: boolean }>`
+  ${({ center }) =>
+    center &&
+    css`
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    `}
+`;
 
 const SubTitle = styled.span`
   position: relative;
@@ -46,9 +54,11 @@ const Title = styled.h3`
   margin-top: 0;
 `;
 
-const SectionTitle: React.FC<React.PropsWithChildren<{ subtitle?: string }>> = ({ children, subtitle }) => {
+const SectionTitle: React.FC<
+  React.PropsWithChildren<{ subtitle?: string; center?: boolean }>
+> = ({ children, subtitle, center = false }) => {
   return (
-    <Wrapper>
+    <Wrapper center={center}>
       {subtitle && <SubTitle>{subtitle}</SubTitle>}
       <Title>{children}</Title>
     </Wrapper>

@@ -1,8 +1,8 @@
 import * as React from "react";
-import { Link } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
 import styled from "styled-components";
 import { BiLogoFacebook, BiLogoInstagram } from "react-icons/bi";
+import Button from "./button";
 
 const Wrapper = styled.footer`
   display: flex;
@@ -15,6 +15,7 @@ const Content = styled.div`
   max-width: 1320px;
   width: 100%;
   padding: 64px 32px;
+  box-sizing: border-box;
 `;
 
 const LogosWrapper = styled.div`
@@ -29,6 +30,7 @@ const ImagesWrapper = styled.div`
   width: 100%;
   align-items: center;
   margin-bottom: 64px;
+  flex-wrap: wrap;
 `;
 
 const SocialNetworks = styled.div`
@@ -77,6 +79,44 @@ const Divider = styled.hr`
 
 const LinksWrapper = styled.div`
   margin: 48px 0;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  row-gap: 40px;
+`;
+
+const LinksColumn = styled.div`
+  h3 {
+    font-family: "Outfit";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    margin-bottom: 28px;
+    margin-top: 0;
+  }
+
+  ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+
+    li a {
+      font-family: "Outfit";
+      font-weight: 400;
+      font-size: 15px;
+      line-height: 31px;
+      color: #969AAB;
+      transition: color linear .3s;
+
+      &:hover {
+        color: white;
+      }
+    }
+  }
 `;
 
 const Footer: React.FC<React.PropsWithChildren> = ({ children }) => {
@@ -114,7 +154,41 @@ const Footer: React.FC<React.PropsWithChildren> = ({ children }) => {
           </SocialNetworks>
         </ImagesWrapper>
         <Divider />
-        <LinksWrapper></LinksWrapper>
+        <LinksWrapper>
+          <LinksColumn>
+            <h3>Iglesia del Nazareno</h3>
+            <ul>
+              <li><a href="#home">Artículos de Fe</a></li>
+              <li><a href="#home">Iglesia Global</a></li>
+              <li><a href="#home">Misión</a></li>
+              <li><a href="#home">Valores Nazarenos</a></li>
+            </ul>
+          </LinksColumn>
+          <LinksColumn>
+            <h3>Nosotros</h3>
+            <ul>
+              <li><a href="#home">¿Quiénes somos?</a></li>
+              <li><a href="#home">¿Dónde estamos?</a></li>
+              <li><a href="#home">Oportunidades de servicio</a></li>
+              <li><a href="#home">Valores Nazarenos</a></li>
+            </ul>
+          </LinksColumn>
+          <LinksColumn>
+            <h3>Links</h3>
+            <ul>
+              <li><a href="#home">Ministerios</a></li>
+              <li><a href="#home">Juventud Nazarena Internacional</a></li>
+              <li><a href="#home">Misiones Nazarenas Internacionales</a></li>
+              <li><a href="#home">Discipulado Nazareno Internacional </a></li>
+            </ul>
+          </LinksColumn>
+          <LinksColumn>
+            <h3>Noticias</h3>
+            <div>
+              <Button hoverStyle="secondary" label="Contáctanos" />
+            </div>
+          </LinksColumn>
+        </LinksWrapper>
         <Divider />
         <Disclaimer>
           <p>&copy; 2023 <a>Alterfreak</a>. Todos los derechos reservados</p>

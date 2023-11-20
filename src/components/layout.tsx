@@ -1,5 +1,4 @@
 import * as React from "react";
-import type { HeadFC } from "gatsby";
 
 import Navbar from "./navbar";
 import styled from "styled-components";
@@ -11,6 +10,7 @@ const Header = styled.header`
   justify-content: center;
   position: absolute;
   width: 100%;
+  z-index: 2;
 `;
 
 const Layout: React.FC<React.PropsWithChildren> = ({ children }) => {

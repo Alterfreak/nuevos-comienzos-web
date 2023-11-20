@@ -1,7 +1,5 @@
 import * as React from "react";
-import Navbar from "./navbar";
 import styled from "styled-components";
-import Footer from "./footer";
 import Layout from "./layout";
 
 const HeroSection = styled.section`
@@ -9,6 +7,19 @@ const HeroSection = styled.section`
   display: flex;
   align-items: center;
   justify-content: center;
+  background-image: url('/images/hero.png');
+  position: relative;
+  background-position: 0 -60px;
+
+  &::before {
+    content: "";
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 0;
+    background: #222324;
+    opacity: 0.9;
+  }
 `;
 
 const Title = styled.h1`
@@ -17,6 +28,7 @@ const Title = styled.h1`
   font-size: 62px;
   color: white;
   text-transform: uppercase;
+  z-index: 2;
 `;
 
 const PageLayout: React.FC<React.PropsWithChildren<{ title: string }>> = ({ children, title }) => {

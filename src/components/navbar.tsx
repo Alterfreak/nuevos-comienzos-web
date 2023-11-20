@@ -1,7 +1,9 @@
-import * as React from "react";
+import React, { useState } from "react";
 import { Link } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
 import styled from "styled-components";
+import IconButton from "./iconButton";
+import Drawer from "./drawer";
 
 const Wrapper = styled.nav`
   height: 72px;
@@ -18,6 +20,18 @@ const LinksWrapper = styled.ul`
   display: flex;
   gap: 64px;
   list-style: none;
+
+  @media screen and (max-width: 1050px) {
+    display: none;
+  }
+`;
+
+const StyledButton = styled(IconButton)`
+  display: none;
+
+  @media screen and (max-width: 1050px) {
+    display: block;
+  }
 `;
 
 const StyledLink = styled(Link)`
@@ -33,7 +47,11 @@ const StyledLink = styled(Link)`
 `;
 
 const Navbar: React.FC<React.PropsWithChildren> = ({ children }) => {
+  const [open, setOpen] = useState(false);
+
   return (
+    <>
+    <Drawer side="right" open={open} onClose={() => setOpen(false)} />
     <Wrapper>
       <Link to="/">
         <StaticImage
@@ -44,6 +62,7 @@ const Navbar: React.FC<React.PropsWithChildren> = ({ children }) => {
           height={45}
         />
       </Link>
+      <StyledButton onClick={() => setOpen(true)} iconName="menu" kind="secondary" />
       <LinksWrapper>
         <li>
           <StyledLink to="/ministries">Ministerios</StyledLink>
@@ -59,6 +78,7 @@ const Navbar: React.FC<React.PropsWithChildren> = ({ children }) => {
         </li>
       </LinksWrapper>
     </Wrapper>
+    </>
   );
 };
 
