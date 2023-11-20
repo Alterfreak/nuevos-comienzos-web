@@ -123,16 +123,27 @@ const MainTitle = styled.h1`
   position: relative;
   z-index: 1;
   color: white;
-  text-align: center;
   font-family: Helvetica Now Text;
   font-weight: 800;
   font-size: 4rem;
-  line-height: 28px;
   max-width: 1440px;
   width: 100%;
   display: block;
   text-align: left;
   margin: auto;
+
+  @media screen and (max-width: 1440px) {
+    padding: 0 36px;
+  }
+
+  @media screen and (max-width: 425px) {
+    font-size: 3.2rem;
+    padding: 0 36px;
+  }
+
+  @media screen and (max-width: 375px) {
+    font-size: 2.3rem;
+  }
 `;
 
 const IndexPage: React.FC<PageProps> = () => {

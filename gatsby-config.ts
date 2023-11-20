@@ -37,7 +37,22 @@ const config: GatsbyConfig = {
         sitemap: 'https://www.nuevos-comienzos.org/sitemap.xml',
         policy: [{userAgent: '*', allow: '/'}]
       }
-    }
+    },
+    {
+      resolve: `gatsby-plugin-google-gtag`,
+      options: {
+        trackingIds: [
+          "G-QELM61VTQR", // Google Analytics / GA
+        ],
+        // This object is used for configuration specific to this plugin
+        pluginConfig: {
+          // Puts tracking script in the head instead of the body
+          head: false,
+          // Setting this parameter is also optional
+          respectDNT: true,
+        },
+      },
+    },
   ],
 };
 
