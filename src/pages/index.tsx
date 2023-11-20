@@ -9,6 +9,7 @@ import Section from '../components/section';
 import Button from '../components/button';
 import IconButton from '../components/iconButton';
 import SectionTitle from '../components/sectionTitle';
+import events from '../data/eventSlider';
 
 const HeroSection = styled.section`
   height: 100vh;
@@ -68,31 +69,53 @@ const Item = styled.div`
 `;
 
 const StyledSlider = styled(Slider)`
-  width: 100%;
+  .slick-list {
+  }
 `;
 
 const SliderItem = styled.div`
   margin: 0 10px;
   box-sizing: border-box;
-  height: 800px;
+
+  img {
+    object-fit: cover;
+    object-position: center;
+  }
+
+  @media screen and (max-width: 425px) {
+    margin: 0;
+    max-width: 100vw;
+
+    img {
+      max-width: 100vw;
+    }
+  }
 `;
 
 const NextButton = styled(IconButton)`
-  right: 36%;
+  right: 50px;
   z-index: 200;
   top: 50%;
   position: absolute;
   transform: translate(0, -50%);
   outline: 0;
+
+  @media screen and (max-width: 425px) {
+    right: 10px;
+  }
 `;
 
 const PrevButton = styled(IconButton)`
-  left: 36%;
+  left: 50px;
   z-index: 200;
   top: 50%;
   position: absolute;
   transform: translate(0, -50%);
   outline: 0;
+
+  @media screen and (max-width: 425px) {
+    left: 10px;
+  }
 `;
 
 const IndexPage: React.FC<PageProps> = () => {
@@ -111,6 +134,16 @@ const IndexPage: React.FC<PageProps> = () => {
           dots={false}
           infinite
           autoplay={false}
+          responsive={[
+            {
+              breakpoint: 425,
+              settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                centerMode: false,
+              },
+            },
+          ]}
           speed={300}
           prevArrow={
             <PrevButton
@@ -142,24 +175,11 @@ const IndexPage: React.FC<PageProps> = () => {
           centerMode
           variableWidth
         >
-          <SliderItem>
-            <img src="https://placehold.co/450x800" alt="placeholder" />
-          </SliderItem>
-          <SliderItem>
-            <img src="https://placehold.co/450x800" alt="placeholder" />
-          </SliderItem>
-          <SliderItem>
-            <img src="https://placehold.co/450x800" alt="placeholder" />
-          </SliderItem>
-          <SliderItem>
-            <img src="https://placehold.co/450x800" alt="placeholder" />
-          </SliderItem>
-          <SliderItem>
-            <img src="https://placehold.co/450x800" alt="placeholder" />
-          </SliderItem>
-          <SliderItem>
-            <img src="https://placehold.co/450x800" alt="placeholder" />
-          </SliderItem>
+          {events.map(e => (
+            <SliderItem key={e.id}>
+              <img src={e.image} alt={e.description} />
+            </SliderItem>
+          ))}
         </StyledSlider>
       </Section>
       <Section transparent>Section</Section>
