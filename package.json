@@ -14,14 +14,15 @@
     "typecheck": "tsc --noEmit",
     "lint": "yarn eslint && yarn prettier && yarn typecheck",
     "eslint": "eslint --fix \"src/**/*.{ts,tsx}\"",
-    "prettier": "prettier --write \"src/**/*.{ts,tsx}\""
+    "prettier": "prettier --write \"src/**/*.{ts,tsx}\"",
+    "postbuild": "mv public/sitemap-0.xml public/sitemap.xml"
   },
   "dependencies": {
     "@types/react-slick": "^0.23.12",
-    "autoprefixer": "^10.4.16",
-    "babel-plugin-styled-components": "^2.1.4",
     "@typescript-eslint/eslint-plugin": "^6.11.0",
     "@typescript-eslint/parser": "^6.11.0",
+    "autoprefixer": "^10.4.16",
+    "babel-plugin-styled-components": "^2.1.4",
     "eslint": "^8.54.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-airbnb-typescript": "^17.1.0",
@@ -36,6 +37,7 @@
     "gatsby-plugin-manifest": "^5.12.3",
     "gatsby-plugin-postcss": "^6.12.0",
     "gatsby-plugin-prettier-eslint": "^1.0.6",
+    "gatsby-plugin-robots-txt": "^1.8.0",
     "gatsby-plugin-sharp": "^5.12.3",
     "gatsby-plugin-sitemap": "^6.12.3",
     "gatsby-plugin-styled-components": "^6.12.0",

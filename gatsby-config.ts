@@ -3,7 +3,7 @@ import type { GatsbyConfig } from "gatsby";
 const config: GatsbyConfig = {
   siteMetadata: {
     title: `IdN - Nuevos Comienzos`,
-    siteUrl: `https://www.yourdomain.tld`,
+    siteUrl: `https://www.nuevos-comienzos.org/`,
   },
   // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.
   // If you use VSCode you can also use the GraphQL plugin
@@ -30,6 +30,14 @@ const config: GatsbyConfig = {
       },
       __key: "images",
     },
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        host: 'https://www.nuevos-comienzos.org',
+        sitemap: 'https://www.nuevos-comienzos.org/sitemap.xml',
+        policy: [{userAgent: '*', allow: '/'}]
+      }
+    }
   ],
 };
 

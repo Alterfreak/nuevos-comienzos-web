@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import type { PageProps, HeadFC } from 'gatsby';
+import type { PageProps } from 'gatsby';
 import styled, { css } from 'styled-components';
 import { StaticImage } from 'gatsby-plugin-image';
 import Slider from 'react-slick';
@@ -10,6 +10,8 @@ import Button from '../components/button';
 import IconButton from '../components/iconButton';
 import SectionTitle from '../components/sectionTitle';
 import events from '../data/eventSlider';
+import CustomHead from '../components/customHead';
+import pageData from '../data/pageData';
 
 const HeroSection = styled.section`
   height: 100vh;
@@ -18,7 +20,6 @@ const HeroSection = styled.section`
   position: relative;
   display: flex;
   align-items: center;
-  justify-content: center;
 
   &::before {
     content: '';
@@ -118,13 +119,30 @@ const PrevButton = styled(IconButton)`
   }
 `;
 
+const MainTitle = styled.h1`
+  position: relative;
+  z-index: 1;
+  color: white;
+  text-align: center;
+  font-family: Helvetica Now Text;
+  font-weight: 800;
+  font-size: 4rem;
+  line-height: 28px;
+  max-width: 1440px;
+  width: 100%;
+  display: block;
+  text-align: left;
+  margin: auto;
+`;
+
 const IndexPage: React.FC<PageProps> = () => {
   const [currentSlide, setCurrentSlide] = useState(1);
 
   return (
     <Layout>
       <HeroSection>
-        <StaticImage src="../images/nuevos-comienzos-blanco.png" alt="A description" placeholder="none" layout="constrained" style={{ width: '50%' }} />
+        <MainTitle>Nuevos Comienzos</MainTitle>
+        {/* <StaticImage src="../images/nuevos-comienzos-blanco.png" alt="A description" placeholder="none" layout="constrained" style={{ width: '50%' }} /> */}
       </HeroSection>
       <Section fullWidth>
         <SectionTitle center subtitle="te invitamos">
@@ -219,6 +237,6 @@ const IndexPage: React.FC<PageProps> = () => {
   );
 };
 
-export const Head: HeadFC = () => <title>Nuevos Comienzos - IdN</title>;
+export const Head = () => <CustomHead title={pageData.index.title} description={pageData.index.description} />;
 
 export default IndexPage;

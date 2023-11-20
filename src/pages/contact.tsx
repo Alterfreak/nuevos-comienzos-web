@@ -1,5 +1,5 @@
 import * as React from 'react';
-import type { PageProps, HeadFC } from 'gatsby';
+import type { PageProps } from 'gatsby';
 import styled from 'styled-components';
 
 import PageLayout from '../components/pageLayout';
@@ -7,6 +7,8 @@ import Section, { SectionWrapper } from '../components/section';
 import SectionTitle from '../components/sectionTitle';
 import Input from '../components/input';
 import Textarea from '../components/textarea';
+import CustomHead from '../components/customHead';
+import pageData from '../data/pageData';
 
 const StyledSectionWrapper = styled(SectionWrapper)`
   padding: 0;
@@ -70,6 +72,6 @@ const ContactPage: React.FC<PageProps> = () => {
   );
 };
 
-export const Head: HeadFC = () => <title>Nuevos Comienzos - IdN</title>;
+export const Head = () => <CustomHead title={pageData.contact.title} description={pageData.contact.description} />;
 
 export default ContactPage;
