@@ -1,8 +1,8 @@
-import React from "react";
-import styled, { css } from "styled-components";
-import IconButton from "./iconButton";
+import React from 'react';
+import styled, { css } from 'styled-components';
+import IconButton from './iconButton';
 
-const Wrapper = styled.div<{ side: "left" | "right" }>`
+const Wrapper = styled.div<{ side: 'left' | 'right' }>`
   position: fixed;
   padding: 24px;
   z-index: 100;
@@ -13,7 +13,7 @@ const Wrapper = styled.div<{ side: "left" | "right" }>`
   box-sizing: border-box;
 
   ${({ side }) =>
-    side === "left"
+    side === 'left'
       ? css`
           left: 0;
         `
@@ -39,17 +39,12 @@ const CloseButton = styled(IconButton)`
 `;
 
 type Props = {
-  side: "left" | "right";
+  side: 'left' | 'right';
   open: boolean;
   onClose: () => void;
 };
 
-const Drawer: React.FC<React.PropsWithChildren<Props>> = ({
-  children,
-  side,
-  open,
-  onClose,
-}) => {
+const Drawer: React.FC<React.PropsWithChildren<Props>> = ({ children, side, open, onClose }) => {
   if (!open) return false;
 
   return (

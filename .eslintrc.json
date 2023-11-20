@@ -1,0 +1,89 @@
+{
+  "root": true,
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true,
+      "impliedStrict": true
+    },
+    "ecmaVersion": 12,
+    "sourceType": "module",
+    "project": ["./tsconfig.json"]
+  },
+  "plugins": [
+    "@typescript-eslint"
+  ],
+  "extends": [
+    "airbnb",
+    "airbnb-typescript",
+    "plugin:prettier/recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "rules": {
+    "@typescript-eslint/no-namespace": "off",
+    "react/jsx-props-no-spreading": "off",
+    "react/require-default-props": "off",
+    "comma-dangle": ["error", "always-multiline"],
+    "no-extra-bind": 0,
+    "no-underscore-dangle": ["error", { "allowAfterThis": true, "allowAfterSuper": true, "allow": ["_id", "_rev"] }],
+    "no-param-reassign": 0,
+    "jsx-quotes": ["error", "prefer-double"],
+    "class-methods-use-this": "off",
+    "react/jsx-filename-extension": [1, { "extensions": [".jsx", ".tsx"] }],
+    "react/jsx-indent": ["error", 2],
+    "react/jsx-indent-props": ["error", 2],
+    "react/prop-types": "off",
+    "react/destructuring-assignment": "off",
+    "no-new": 0,
+    "max-len": [1, 180],
+    "import/prefer-default-export": "off",
+    "import/no-unresolved": 0,
+    "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }],
+    "no-unused-vars": ["error", {
+      "vars": "all",
+      "args": "after-used",
+      "ignoreRestSiblings": true,
+      "argsIgnorePattern": "ignore"
+    }],
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "js": "never",
+        "jsx": "never",
+        "ts": "never",
+        "tsx": "never"
+      }
+    ],
+    "import/no-named-as-default": "off",
+    "no-useless-escape": "off",
+    "operator-linebreak": "off",
+    "lines-between-class-members": "off",
+    "react/display-name": 1,
+    "react/state-in-constructor": [2, "never"],
+    "jsx-a11y/control-has-associated-label": 1,
+    "react/static-property-placement": [2, "static public field"],
+    "react/jsx-curly-brace-presence": [2, "never"],
+    "no-restricted-syntax": ["error", "ForInStatement", "LabeledStatement", "WithStatement"],
+    "no-await-in-loop": 0,
+    "no-empty-function": 0,
+    "@typescript-eslint/no-empty-function": [2, { "allow": ["arrowFunctions"] }],
+    "no-redeclare": 0,
+    "@typescript-eslint/no-redeclare": 2,
+    "@typescript-eslint/no-unused-vars": [2, { "ignoreRestSiblings": true }],
+    "@typescript-eslint/no-explicit-any": "off",
+    "no-useless-constructor": 0,
+    "@typescript-eslint/no-useless-constructor": 2,
+    "no-use-before-define": "off",
+    "no-continue": 0,
+    "curly": ["error", "multi-line"],
+    "react/function-component-definition": "off",
+    "@typescript-eslint/ban-ts-comment": ["error", { "ts-ignore": "allow-with-description" }],
+    "import/no-cycle": "off"
+  }
+}

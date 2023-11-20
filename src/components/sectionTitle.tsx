@@ -1,5 +1,5 @@
-import * as React from "react";
-import styled, { css } from "styled-components";
+import * as React from 'react';
+import styled, { css } from 'styled-components';
 
 const Wrapper = styled.div<{ center: boolean }>`
   ${({ center }) =>
@@ -23,7 +23,7 @@ const SubTitle = styled.span`
   padding-left: 15px;
 
   &::before {
-    content: "";
+    content: '';
     width: 10px;
     display: block;
     position: absolute;
@@ -34,7 +34,7 @@ const SubTitle = styled.span`
   }
 
   &::after {
-    content: "";
+    content: '';
     width: 10px;
     display: block;
     position: absolute;
@@ -55,9 +55,7 @@ const Title = styled.h3`
   text-align: center;
 `;
 
-const SectionTitle: React.FC<
-  React.PropsWithChildren<{ subtitle?: string; center?: boolean }>
-> = ({ children, subtitle, center = false }) => {
+const SectionTitle: React.FC<React.PropsWithChildren<{ subtitle?: string; center?: boolean }>> = ({ children, subtitle, center = false }) => {
   return (
     <Wrapper center={center}>
       {subtitle && <SubTitle>{subtitle}</SubTitle>}

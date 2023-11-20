@@ -1,9 +1,9 @@
-import React, { useState } from "react";
-import { Link } from "gatsby";
-import { StaticImage } from "gatsby-plugin-image";
-import styled from "styled-components";
-import IconButton from "./iconButton";
-import Drawer from "./drawer";
+import React, { useState } from 'react';
+import { Link } from 'gatsby';
+import { StaticImage } from 'gatsby-plugin-image';
+import styled from 'styled-components';
+import IconButton from './iconButton';
+import Drawer from './drawer';
 
 const Wrapper = styled.nav`
   height: 72px;
@@ -39,45 +39,39 @@ const StyledLink = styled(Link)`
   font-size: 16px;
   font-family: 'Outfit';
   font-weight: 600;
-  transition: color linear .3s;
+  transition: color linear 0.3s;
 
   &:hover {
     color: var(--contrast);
   }
 `;
 
-const Navbar: React.FC<React.PropsWithChildren> = ({ children }) => {
+const Navbar: React.FC = () => {
   const [open, setOpen] = useState(false);
 
   return (
     <>
-    <Drawer side="right" open={open} onClose={() => setOpen(false)} />
-    <Wrapper>
-      <Link to="/">
-        <StaticImage
-          src="../images/nuevos-comienzos-largo-blanco.png"
-          alt="A description"
-          placeholder="blurred"
-          layout="fixed"
-          height={45}
-        />
-      </Link>
-      <StyledButton onClick={() => setOpen(true)} iconName="menu" kind="secondary" />
-      <LinksWrapper>
-        <li>
-          <StyledLink to="/ministries">Ministerios</StyledLink>
-        </li>
-        <li>
-          <StyledLink to="/articles">Artículos de Fe</StyledLink>
-        </li>
-        <li>
-          <StyledLink to="/about">Nosotros</StyledLink>
-        </li>
-        <li>
-          <StyledLink to="/contact">Contáctanos</StyledLink>
-        </li>
-      </LinksWrapper>
-    </Wrapper>
+      <Drawer side="right" open={open} onClose={() => setOpen(false)} />
+      <Wrapper>
+        <Link to="/">
+          <StaticImage src="../images/nuevos-comienzos-largo-blanco.png" alt="A description" placeholder="blurred" layout="fixed" height={45} />
+        </Link>
+        <StyledButton onClick={() => setOpen(true)} iconName="menu" kind="secondary" />
+        <LinksWrapper>
+          <li>
+            <StyledLink to="/ministries">Ministerios</StyledLink>
+          </li>
+          <li>
+            <StyledLink to="/articles">Artículos de Fe</StyledLink>
+          </li>
+          <li>
+            <StyledLink to="/about">Nosotros</StyledLink>
+          </li>
+          <li>
+            <StyledLink to="/contact">Contáctanos</StyledLink>
+          </li>
+        </LinksWrapper>
+      </Wrapper>
     </>
   );
 };

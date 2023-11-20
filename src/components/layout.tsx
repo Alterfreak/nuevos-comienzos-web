@@ -1,8 +1,8 @@
-import * as React from "react";
+import * as React from 'react';
 
-import Navbar from "./navbar";
-import styled from "styled-components";
-import Footer from "./footer";
+import styled from 'styled-components';
+import Navbar from './navbar';
+import Footer from './footer';
 
 const Header = styled.header`
   display: flex;

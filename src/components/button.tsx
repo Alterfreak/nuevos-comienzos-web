@@ -1,7 +1,7 @@
-import * as React from "react";
-import styled, { css } from "styled-components";
+import * as React from 'react';
+import styled, { css } from 'styled-components';
 
-const StyledButton = styled.button<{ hoverStyle: "primary" | "secondary" }>`
+const StyledButton = styled.button<{ hoverStyle: 'primary' | 'secondary' }>`
   color: #fff;
   background: var(--contrast);
   border: 0;
@@ -17,7 +17,7 @@ const StyledButton = styled.button<{ hoverStyle: "primary" | "secondary" }>`
 
   &:hover {
     ${({ hoverStyle }) => {
-      if (hoverStyle === "secondary") {
+      if (hoverStyle === 'secondary') {
         return css`
           background: white;
           color: #121212;
@@ -33,10 +33,10 @@ const StyledButton = styled.button<{ hoverStyle: "primary" | "secondary" }>`
 
 type Props = {
   label: string;
-  hoverStyle?: "primary" | "secondary";
+  hoverStyle?: 'primary' | 'secondary';
 };
 
-const Button: React.FC<Props> = ({ label, hoverStyle = "primary" }) => {
+const Button: React.FC<Props> = ({ label, hoverStyle = 'primary' }) => {
   return <StyledButton hoverStyle={hoverStyle}>{label}</StyledButton>;
 };
 

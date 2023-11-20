@@ -1,8 +1,8 @@
-import * as React from "react";
-import { StaticImage } from "gatsby-plugin-image";
-import styled from "styled-components";
-import { BiLogoFacebook, BiLogoInstagram } from "react-icons/bi";
-import Button from "./button";
+import * as React from 'react';
+import { StaticImage } from 'gatsby-plugin-image';
+import styled from 'styled-components';
+import { BiLogoFacebook, BiLogoInstagram } from 'react-icons/bi';
+import Button from './button';
 
 const Wrapper = styled.footer`
   display: flex;
@@ -77,7 +77,7 @@ const Disclaimer = styled.div`
     font-size: 15px;
     line-height: 23px;
     color: #ffffff;
-    font-family: "Outfit";
+    font-family: 'Outfit';
   }
 `;
 
@@ -96,7 +96,7 @@ const LinksWrapper = styled.div`
 
 const LinksColumn = styled.div`
   h3 {
-    font-family: "Outfit";
+    font-family: 'Outfit';
     font-style: normal;
     font-weight: 700;
     font-size: 16px;
@@ -114,7 +114,7 @@ const LinksColumn = styled.div`
     list-style: none;
 
     li a {
-      font-family: "Outfit";
+      font-family: 'Outfit';
       font-weight: 400;
       font-size: 15px;
       line-height: 31px;
@@ -128,42 +128,24 @@ const LinksColumn = styled.div`
   }
 `;
 
-const Footer: React.FC<React.PropsWithChildren> = ({ children }) => {
+const Footer: React.FC = () => {
   return (
     <Wrapper>
       <Content>
         <ImagesWrapper>
           <LogosWrapper>
             <a href="#home">
-              <StaticImage
-                src="../images/ancho-blanco-norte.png"
-                alt="A description"
-                placeholder="blurred"
-                layout="fixed"
-                height={95}
-              />
+              <StaticImage src="../images/ancho-blanco-norte.png" alt="A description" placeholder="blurred" layout="fixed" height={95} />
             </a>
             <a href="#home">
-              <StaticImage
-                src="../images/nuevos-comienzos-blanco.png"
-                alt="A description"
-                placeholder="blurred"
-                layout="fixed"
-                height={95}
-              />
+              <StaticImage src="../images/nuevos-comienzos-blanco.png" alt="A description" placeholder="blurred" layout="fixed" height={95} />
             </a>
           </LogosWrapper>
           <SocialNetworks>
-            <SocialNetwork
-              target="_blank"
-              href="https://www.facebook.com/nazbaqnorte"
-            >
+            <SocialNetwork target="_blank" href="https://www.facebook.com/nazbaqnorte">
               <BiLogoFacebook color="white" />
             </SocialNetwork>
-            <SocialNetwork
-              target="_blank"
-              href="https://instagram.com/nazbaqnorte"
-            >
+            <SocialNetwork target="_blank" href="https://instagram.com/nazbaqnorte">
               <BiLogoInstagram color="white" />
             </SocialNetwork>
           </SocialNetworks>
@@ -231,7 +213,7 @@ const Footer: React.FC<React.PropsWithChildren> = ({ children }) => {
         <Divider />
         <Disclaimer>
           <p>
-            &copy; 2023 <a>Alterfreak</a>. Todos los derechos reservados
+            &copy; 2023 <span>Alterfreak</span>. Todos los derechos reservados
           </p>
           <p>Hecho con ✝️ en Barranquilla, Colombia.</p>
         </Disclaimer>

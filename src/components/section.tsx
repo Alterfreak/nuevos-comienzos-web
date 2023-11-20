@@ -1,5 +1,5 @@
-import React from "react";
-import styled, { css } from "styled-components";
+import React from 'react';
+import styled, { css } from 'styled-components';
 
 export const SectionWrapper = styled.section<{
   fullWidth?: boolean;
@@ -42,11 +42,7 @@ type Props = {
   transparent?: boolean;
 };
 
-const Section: React.FC<React.PropsWithChildren<Props>> = ({
-  children,
-  fullWidth = false,
-  transparent = false,
-}) => {
+const Section: React.FC<React.PropsWithChildren<Props>> = ({ children, fullWidth = false, transparent = false }) => {
   if (fullWidth) {
     return (
       <SectionWrapper transparent={transparent} fullWidth>

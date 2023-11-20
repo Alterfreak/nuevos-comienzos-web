@@ -1,5 +1,5 @@
-import * as React from "react";
-import styled from "styled-components";
+import * as React from 'react';
+import styled from 'styled-components';
 
 export const Wrapper = styled.div`
   display: flex;
@@ -26,16 +26,16 @@ const StyledInput = styled.textarea`
   padding: 10px;
   font-size: 16px;
   font-family: Outfit;
-  transition: border-color linear .3s;
+  transition: border-color linear 0.3s;
 
-  &:active, &:focus {
+  &:active,
+  &:focus {
     border-color: var(--contrast);
   }
 `;
 
 type Props = {
-  label?: string
-  value?: string;
+  label?: string;
   name?: string;
   id?: string;
 };

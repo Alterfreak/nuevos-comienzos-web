@@ -1,13 +1,13 @@
-import * as React from "react";
-import styled, { css } from "styled-components";
-import { BiMenu, BiX, BiChevronRight, BiChevronLeft } from "react-icons/bi";
+import * as React from 'react';
+import styled, { css } from 'styled-components';
+import { BiMenu, BiX, BiChevronRight, BiChevronLeft } from 'react-icons/bi';
 
-type Kind = "primary" | "secondary";
+type Kind = 'primary' | 'secondary';
 
 const StyledButton = styled.button<{
   hoverStyle: Kind;
   kind: Kind;
-  type: "filled" | "default";
+  type: 'filled' | 'default';
 }>`
   background: transparent;
   border: 0;
@@ -16,7 +16,7 @@ const StyledButton = styled.button<{
   transition: all linear 0.3s;
 
   ${({ type }) => {
-    if (type === "filled") {
+    if (type === 'filled') {
       return css`
         border-radius: 50%;
         background: white;
@@ -33,7 +33,7 @@ const StyledButton = styled.button<{
   }}
 
   ${({ kind }) => {
-    if (kind === "secondary") {
+    if (kind === 'secondary') {
       return css`
         color: white;
       `;
@@ -45,7 +45,7 @@ const StyledButton = styled.button<{
 
   &:hover {
     ${({ hoverStyle }) => {
-      if (hoverStyle === "secondary") {
+      if (hoverStyle === 'secondary') {
         return css`
           color: #121212;
         `;
@@ -55,7 +55,7 @@ const StyledButton = styled.button<{
       `;
     }}
     ${({ type }) => {
-      if (type === "filled") {
+      if (type === 'filled') {
         return css`
           background: var(--contrast);
         `;
@@ -71,44 +71,31 @@ type Props = {
   iconName: string;
   hoverStyle?: Kind;
   kind?: Kind;
-  type?: "filled" | "default";
+  type?: 'filled' | 'default';
   className?: string;
   onClick: () => void;
 };
 
-const IconButton: React.FC<Props> = ({
-  iconName,
-  className,
-  onClick,
-  kind = "primary",
-  hoverStyle = "primary",
-  type = "default",
-}) => {
+const IconButton: React.FC<Props> = ({ iconName, className, onClick, kind = 'primary', hoverStyle = 'primary', type = 'default' }) => {
   let Icon = null;
   switch (iconName) {
-    case "menu":
+    case 'menu':
       Icon = <BiMenu size={40} />;
       break;
-    case "close":
+    case 'close':
       Icon = <BiX size={40} />;
       break;
-    case "chevron-right":
+    case 'chevron-right':
       Icon = <BiChevronRight size={40} />;
       break;
-    case "chevron-left":
+    case 'chevron-left':
       Icon = <BiChevronLeft size={40} />;
       break;
     default:
       break;
   }
   return (
-    <StyledButton
-      onClick={onClick}
-      type={type}
-      className={className}
-      kind={kind}
-      hoverStyle={hoverStyle}
-    >
+    <StyledButton onClick={onClick} type={type} className={className} kind={kind} hoverStyle={hoverStyle}>
       {Icon}
     </StyledButton>
   );

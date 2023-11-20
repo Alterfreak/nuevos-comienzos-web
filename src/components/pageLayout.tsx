@@ -1,18 +1,18 @@
-import * as React from "react";
-import styled from "styled-components";
-import Layout from "./layout";
+import * as React from 'react';
+import styled from 'styled-components';
+import Layout from './layout';
 
 const HeroSection = styled.section`
   height: 624px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: url("/images/hero.png");
+  background-image: url('/images/hero.png');
   position: relative;
   background-position: 0 -60px;
 
   &::before {
-    content: "";
+    content: '';
     height: 100%;
     width: 100%;
     position: absolute;
@@ -31,10 +31,7 @@ const Title = styled.h1`
   z-index: 2;
 `;
 
-const PageLayout: React.FC<React.PropsWithChildren<{ title: string }>> = ({
-  children,
-  title,
-}) => {
+const PageLayout: React.FC<React.PropsWithChildren<{ title: string }>> = ({ children, title }) => {
   return (
     <Layout>
       <HeroSection>

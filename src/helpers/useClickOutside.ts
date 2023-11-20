@@ -1,18 +1,9 @@
 import { DependencyList, RefObject, useEffect } from 'react';
 
-const useClickOutside = (
-  ref: RefObject<HTMLElement>,
-  handler: () => void,
-  checkDirectParent: boolean = false,
-  deps?: DependencyList
-) => {
+const useClickOutside = (ref: RefObject<HTMLElement>, handler: () => void, checkDirectParent: boolean = false, deps?: DependencyList) => {
   useEffect(() => {
     const listener = (event: Event) => {
-      if (
-        ref.current &&
-        !ref.current.contains(event.target as Node) &&
-        (!checkDirectParent || !ref.current.parentElement?.isSameNode(event.target as Node))
-      ) {
+      if (ref.current && !ref.current.contains(event.target as Node) && (!checkDirectParent || !ref.current.parentElement?.isSameNode(event.target as Node))) {
         handler();
       }
     };

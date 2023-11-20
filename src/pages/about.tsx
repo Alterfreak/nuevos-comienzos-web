@@ -1,12 +1,12 @@
-import * as React from "react";
-import type { PageProps, HeadFC } from "gatsby";
-import styled from "styled-components";
+import * as React from 'react';
+import type { PageProps, HeadFC } from 'gatsby';
+import styled from 'styled-components';
 
-import PageLayout from "../components/pageLayout";
-import Section, { SectionWrapper } from "../components/section";
-import SectionTitle from "../components/sectionTitle";
-import Input from "../components/input";
-import Textarea from "../components/textarea";
+import PageLayout from '../components/pageLayout';
+import Section, { SectionWrapper } from '../components/section';
+import SectionTitle from '../components/sectionTitle';
+import Input from '../components/input';
+import Textarea from '../components/textarea';
 
 const StyledSectionWrapper = styled(SectionWrapper)`
   padding: 0;
@@ -31,20 +31,24 @@ const AboutPage: React.FC<PageProps> = () => {
         <SectionTitle subtitle="¿tienes una consulta?">Envíanos un mensaje</SectionTitle>
         <div>
           <Form>
-            <div style={{
-                  display: 'grid',
-                  width: '100%',
-                  gap: '32px',
-                  gridTemplateColumns: '1fr 1fr',
-            }}>
+            <div
+              style={{
+                display: 'grid',
+                width: '100%',
+                gap: '32px',
+                gridTemplateColumns: '1fr 1fr',
+              }}
+            >
               <Input name="name" id="firstName" label="Tu nombre" />
               <Input name="lastName" id="lastName" label="Tu apellido" />
             </div>
-            <div style={{
-                  display: 'flex',
-                  width: '100%',
-                  gap: '32px',
-            }}>
+            <div
+              style={{
+                display: 'flex',
+                width: '100%',
+                gap: '32px',
+              }}
+            >
               <Input name="email" id="email" label="Tu email" />
               <Input name="phone" id="phone" label="Tu teléfono" />
             </div>
@@ -60,7 +64,7 @@ const AboutPage: React.FC<PageProps> = () => {
           allowFullScreen={false}
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
-        ></Map>
+        />
       </StyledSectionWrapper>
     </PageLayout>
   );
