@@ -52,6 +52,7 @@ const Title = styled.h3`
   line-height: 1.25;
   margin-bottom: 50px;
   margin-top: 0;
+  text-align: center;
 `;
 
 const SectionTitle: React.FC<

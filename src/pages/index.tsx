@@ -46,9 +46,10 @@ const GridRow = styled.div<{ columns: number }>`
 `;
 
 const Item = styled.div`
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-rows: 95px 1fr auto;
   align-items: center;
+  justify-items: center;
   gap: 16px;
 
   p {
@@ -192,8 +193,8 @@ const IndexPage: React.FC<PageProps> = () => {
               src="../images/mni-logo.png"
               alt="A description"
               placeholder="none"
-              layout="fixed"
-              height={95}
+              layout="constrained"
+              style={{ width: "50%" }}
             />
             <p>
               Debemos llevar el mensaje de Jesús a todo el mundo y enseñar a las

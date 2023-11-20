@@ -7,7 +7,7 @@ const HeroSection = styled.section`
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: url('/images/hero.png');
+  background-image: url("/images/hero.png");
   position: relative;
   background-position: 0 -60px;
 
@@ -31,7 +31,10 @@ const Title = styled.h1`
   z-index: 2;
 `;
 
-const PageLayout: React.FC<React.PropsWithChildren<{ title: string }>> = ({ children, title }) => {
+const PageLayout: React.FC<React.PropsWithChildren<{ title: string }>> = ({
+  children,
+  title,
+}) => {
   return (
     <Layout>
       <HeroSection>
