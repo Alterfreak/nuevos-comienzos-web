@@ -40,18 +40,19 @@ const Content = styled.section`
 type Props = {
   fullWidth?: boolean;
   transparent?: boolean;
+  className?: string;
 };
 
-const Section: React.FC<React.PropsWithChildren<Props>> = ({ children, fullWidth = false, transparent = false }) => {
+const Section: React.FC<React.PropsWithChildren<Props>> = ({ children, className, fullWidth = false, transparent = false }) => {
   if (fullWidth) {
     return (
-      <SectionWrapper transparent={transparent} fullWidth>
+      <SectionWrapper transparent={transparent} fullWidth className={className}>
         {children}
       </SectionWrapper>
     );
   }
   return (
-    <SectionWrapper transparent={transparent}>
+    <SectionWrapper transparent={transparent} className={className}>
       <Content>{children}</Content>
     </SectionWrapper>
   );

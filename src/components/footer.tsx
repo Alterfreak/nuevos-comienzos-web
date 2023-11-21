@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { StaticImage } from 'gatsby-plugin-image';
 import styled from 'styled-components';
-import { BiLogoFacebook, BiLogoInstagram } from 'react-icons/bi';
+import { BiLogoFacebook, BiLogoInstagram, BiLogoWhatsapp, BiMap } from 'react-icons/bi';
 import Button from './button';
 
 const Wrapper = styled.footer`
@@ -128,6 +128,34 @@ const LinksColumn = styled.div`
   }
 `;
 
+const Text = styled.span`
+  margin: 0;
+  padding: 0;
+  font-weight: 500;
+  font-size: 15px;
+  color: #ffffff;
+  font-family: 'Outfit';
+  color: #ffffff;
+
+  a,
+  a:visited {
+    color: #ffffff;
+    transition: color linear 0.3s;
+
+    &:hover {
+      color: var(--contrast);
+    }
+  }
+`;
+
+const ContactItem = styled.div`
+  display: grid;
+  align-items: center;
+  grid-template-columns: min-content auto;
+  gap: 8px;
+  margin-bottom: 16px;
+`;
+
 const Footer: React.FC = () => {
   return (
     <Wrapper>
@@ -204,8 +232,24 @@ const Footer: React.FC = () => {
             </ul>
           </LinksColumn>
           <LinksColumn>
-            <h3>Noticias</h3>
+            <h3>Contacto</h3>
             <div>
+              <ContactItem>
+                <BiMap color="white" size={22} />
+                <Text>
+                  <a target="_blank" href="https://maps.app.goo.gl/QJ5H4mhPW2CcGBm19" rel="noreferrer">
+                    Cl. 80#41d-09, Ciudad Jardín, Barranquilla
+                  </a>
+                </Text>
+              </ContactItem>
+              <ContactItem>
+                <BiLogoWhatsapp color="white" size={22} />
+                <Text>
+                  <a href="https://wa.me/573243158514?text=%C2%A1Hola%20Iglesia%20del%20Nazareno!%20Deseo%20saber%20m%C3%A1s%20de%20la%20iglesia.">
+                    +57 324 3158514
+                  </a>
+                </Text>
+              </ContactItem>
               <Button hoverStyle="secondary" label="Contáctanos" />
             </div>
           </LinksColumn>

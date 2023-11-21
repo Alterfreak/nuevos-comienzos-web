@@ -1,7 +1,12 @@
 import * as React from 'react';
 import styled, { css } from 'styled-components';
 
-const Wrapper = styled.div<{ center: boolean }>`
+const Wrapper = styled.div<{ center: boolean; light?: boolean }>`
+  ${({ light }) =>
+    light &&
+    css`
+      color: #e1e1e1;
+    `}
   ${({ center }) =>
     center &&
     css`
@@ -45,21 +50,33 @@ const SubTitle = styled.span`
   }
 `;
 
-const Title = styled.h3`
+const Title = styled.h3<{ center?: boolean }>`
   font-family: Helvetica Now Text;
   font-weight: 700;
   font-size: 42px;
   line-height: 1.25;
   margin-bottom: 50px;
   margin-top: 0;
-  text-align: center;
+
+  ${({ center }) =>
+    center &&
+    css`
+      text-align: center;
+    `}
 `;
 
-const SectionTitle: React.FC<React.PropsWithChildren<{ subtitle?: string; center?: boolean }>> = ({ children, subtitle, center = false }) => {
+type Props = {
+  title: string;
+  subtitle?: string;
+  center?: boolean;
+  light?: boolean;
+};
+
+const SectionTitle: React.FC<Props> = ({ title, subtitle, center = false, light = false }) => {
   return (
-    <Wrapper center={center}>
+    <Wrapper center={center} light={light}>
       {subtitle && <SubTitle>{subtitle}</SubTitle>}
-      <Title>{children}</Title>
+      <Title>{title}</Title>
     </Wrapper>
   );
 };

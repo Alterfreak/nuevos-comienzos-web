@@ -30,7 +30,7 @@ const AboutPage: React.FC<PageProps> = () => {
   return (
     <PageLayout title="¿Quienes somos?">
       <Section>
-        <SectionTitle subtitle="¿tienes una consulta?">Envíanos un mensaje</SectionTitle>
+        <SectionTitle subtitle="¿tienes una consulta?" title="Envíanos un mensaje" />
         <div>
           <Form>
             <div

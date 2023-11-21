@@ -1,17 +1,15 @@
-import React, { useState } from 'react';
+import React from 'react';
 import type { PageProps } from 'gatsby';
 import styled, { css } from 'styled-components';
 import { StaticImage } from 'gatsby-plugin-image';
-import Slider from 'react-slick';
 
 import Layout from '../components/layout';
 import Section from '../components/section';
 import Button from '../components/button';
-import IconButton from '../components/iconButton';
-import SectionTitle from '../components/sectionTitle';
-import events from '../data/eventSlider';
 import CustomHead from '../components/customHead';
 import pageData from '../data/pageData';
+import SectionGroups from '../pagesSections/index/sectionGroups';
+import SectionActivities from '../pagesSections/index/sectionActivities';
 
 const HeroSection = styled.section`
   height: 100vh;
@@ -69,56 +67,6 @@ const Item = styled.div`
   }
 `;
 
-const StyledSlider = styled(Slider)`
-  .slick-list {
-  }
-`;
-
-const SliderItem = styled.div`
-  margin: 0 10px;
-  box-sizing: border-box;
-
-  img {
-    object-fit: cover;
-    object-position: center;
-  }
-
-  @media screen and (max-width: 425px) {
-    margin: 0;
-    max-width: 100vw;
-
-    img {
-      max-width: 100vw;
-    }
-  }
-`;
-
-const NextButton = styled(IconButton)`
-  right: 50px;
-  z-index: 200;
-  top: 50%;
-  position: absolute;
-  transform: translate(0, -50%);
-  outline: 0;
-
-  @media screen and (max-width: 425px) {
-    right: 10px;
-  }
-`;
-
-const PrevButton = styled(IconButton)`
-  left: 50px;
-  z-index: 200;
-  top: 50%;
-  position: absolute;
-  transform: translate(0, -50%);
-  outline: 0;
-
-  @media screen and (max-width: 425px) {
-    left: 10px;
-  }
-`;
-
 const MainTitle = styled.h1`
   position: relative;
   z-index: 1;
@@ -147,71 +95,14 @@ const MainTitle = styled.h1`
 `;
 
 const IndexPage: React.FC<PageProps> = () => {
-  const [currentSlide, setCurrentSlide] = useState(1);
-
   return (
     <Layout>
       <HeroSection>
         <MainTitle>Nuevos Comienzos</MainTitle>
         {/* <StaticImage src="../images/nuevos-comienzos-blanco.png" alt="A description" placeholder="none" layout="constrained" style={{ width: '50%' }} /> */}
       </HeroSection>
-      <Section fullWidth>
-        <SectionTitle center subtitle="te invitamos">
-          Eventos y Actividades
-        </SectionTitle>
-        <StyledSlider
-          dots={false}
-          infinite
-          autoplay={false}
-          responsive={[
-            {
-              breakpoint: 425,
-              settings: {
-                slidesToShow: 1,
-                slidesToScroll: 1,
-                centerMode: false,
-              },
-            },
-          ]}
-          speed={300}
-          prevArrow={
-            <PrevButton
-              iconName="chevron-left"
-              type="filled"
-              hoverStyle="secondary"
-              onClick={() =>
-                setCurrentSlide(prev => {
-                  if (prev - 1 === 0) return 6;
-                  return prev - 1;
-                })
-              }
-            />
-          }
-          nextArrow={
-            <NextButton
-              iconName="chevron-right"
-              type="filled"
-              hoverStyle="secondary"
-              onClick={() =>
-                setCurrentSlide(prev => {
-                  if (prev + 1 === 7) return 1;
-                  return prev + 1;
-                })
-              }
-            />
-          }
-          slidesToShow={currentSlide}
-          centerMode
-          variableWidth
-        >
-          {events.map(e => (
-            <SliderItem key={e.id}>
-              <img src={e.image} alt={e.description} />
-            </SliderItem>
-          ))}
-        </StyledSlider>
-      </Section>
-      <Section transparent>Section</Section>
+      <SectionActivities />
+      <SectionGroups />
       <Section>
         <GridRow columns={3}>
           <Item>

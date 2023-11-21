@@ -18,6 +18,7 @@
     "postbuild": "mv public/sitemap-0.xml public/sitemap.xml"
   },
   "dependencies": {
+    "@react-spring/web": "^9.7.3",
     "@types/react-slick": "^0.23.12",
     "@typescript-eslint/eslint-plugin": "^6.11.0",
     "@typescript-eslint/parser": "^6.11.0",
