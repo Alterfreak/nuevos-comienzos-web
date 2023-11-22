@@ -77,35 +77,36 @@ const StyledLink = styled(Link)`
 
 const Navbar: React.FC = () => {
   const [open, setOpen] = useState(false);
+  const PortaledDrawer = typeof document !== 'undefined' ? createPortal(
+    <Drawer side="right" open={open} onClose={() => setOpen(false)}>
+      <StaticImage
+        src="../images/nuevos-comienzos-largo-oscuro.png"
+        alt="Logo iglesia del nazareno nuevos comienzos"
+        placeholder="blurred"
+        layout="fixed"
+        height={45}
+      />
+      <LinksWrapperVertical>
+        <li>
+          <StyledLink to="/ministries">Ministerios</StyledLink>
+        </li>
+        <li>
+          <StyledLink to="/articles">Artículos de Fe</StyledLink>
+        </li>
+        <li>
+          <StyledLink to="/about">Nosotros</StyledLink>
+        </li>
+        <li>
+          <StyledLink to="/contact">Contáctanos</StyledLink>
+        </li>
+      </LinksWrapperVertical>
+    </Drawer>,
+    document.body
+  ) : null;
 
   return (
     <>
-      {createPortal(
-        <Drawer side="right" open={open} onClose={() => setOpen(false)}>
-          <StaticImage
-            src="../images/nuevos-comienzos-largo-oscuro.png"
-            alt="Logo iglesia del nazareno nuevos comienzos"
-            placeholder="blurred"
-            layout="fixed"
-            height={45}
-          />
-          <LinksWrapperVertical>
-            <li>
-              <StyledLink to="/ministries">Ministerios</StyledLink>
-            </li>
-            <li>
-              <StyledLink to="/articles">Artículos de Fe</StyledLink>
-            </li>
-            <li>
-              <StyledLink to="/about">Nosotros</StyledLink>
-            </li>
-            <li>
-              <StyledLink to="/contact">Contáctanos</StyledLink>
-            </li>
-          </LinksWrapperVertical>
-        </Drawer>,
-        document.body,
-      )}
+      {PortaledDrawer}
       <Wrapper>
         <Link to="/">
           <StaticImage
