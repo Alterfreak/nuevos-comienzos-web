@@ -11,6 +11,10 @@ const Wrapper = styled.div<{ side: 'left' | 'right' }>`
   background-color: white;
   top: 0;
   box-sizing: border-box;
+  transition: 0.3s;
+  @media screen and (max-width: 425px) {
+    width: 100%;
+  }
 
   ${({ side }) =>
     side === 'left'
@@ -34,7 +38,7 @@ const Overlay = styled.div`
 
 const CloseButton = styled(IconButton)`
   position: absolute;
-  top: 20px;
+  top: 28px;
   right: 20px;
 `;
 
