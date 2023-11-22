@@ -5,6 +5,8 @@ import { BiRadioCircleMarked } from 'react-icons/bi';
 import Section from '../../components/section';
 import SectionTitle from '../../components/sectionTitle';
 import Button from '../../components/button';
+import InfoItem from '../../components/infoItem';
+import SectionDescription from '../../components/sectionDescription';
 
 const Wrapper = styled.div`
   display: grid;
@@ -26,37 +28,6 @@ const ItemList = styled.div`
   @media screen and (max-width: 767px) {
     grid-template-columns: 1fr;
   }
-`;
-
-const Item = styled.div`
-  display: flex;
-  gap: 24px;
-  color: white;
-`;
-
-const ItemTitle = styled.h3`
-  font-family: Helvetica Now Text;
-  font-weight: 700;
-  font-size: 24px;
-  margin-bottom: 16px;
-  margin-top: 0;
-`;
-
-const ItemDescription = styled.span`
-  font-family: Outfit;
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 30px;
-`;
-
-const SectionDescription = styled.p`
-  font-family: Outfit;
-  font-weight: 400;
-  font-size: 20px;
-  color: #e1e1e1;
-  line-height: 30px;
-  margin-bottom: 30px;
-  margin-top: 30px;
 `;
 
 const StyledSection = styled(Section)`
@@ -109,7 +80,7 @@ const SectionGroups: React.FC = () => {
         <div>
           <SectionTitle subtitle="visitános en" title="Grupos de conexión" light />
 
-          <SectionDescription>
+          <SectionDescription light>
             Nos reunimos semanalmente en diferentes horarios, días y puntos de la ciudad para compartir la palabra de Dios y tener conversaciones
             significativas.
             <br />
@@ -120,13 +91,7 @@ const SectionGroups: React.FC = () => {
         </div>
         <ItemList>
           {groups.map(g => (
-            <Item key={g.id}>
-              <BiRadioCircleMarked size={80} />
-              <div>
-                <ItemTitle>{g.title}</ItemTitle>
-                <ItemDescription>{g.description}</ItemDescription>
-              </div>
-            </Item>
+            <InfoItem light title={g.title} description={g.description} key={g.id} Icon={<BiRadioCircleMarked size={80} />} />
           ))}
         </ItemList>
       </Wrapper>

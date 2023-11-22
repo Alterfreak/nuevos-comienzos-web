@@ -29,6 +29,11 @@ const Title = styled.h1`
   color: white;
   text-transform: uppercase;
   z-index: 2;
+
+  @media screen and (max-width: 425px) {
+    font-size: 2.5rem;
+    padding: 0 32px;
+  }
 `;
 
 const PageLayout: React.FC<React.PropsWithChildren<{ title: string }>> = ({ children, title }) => {

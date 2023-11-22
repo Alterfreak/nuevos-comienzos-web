@@ -10,6 +10,7 @@ import CustomHead from '../components/customHead';
 import pageData from '../data/pageData';
 import SectionGroups from '../pagesSections/index/sectionGroups';
 import SectionActivities from '../pagesSections/index/sectionActivities';
+import SectionTitle from '../components/sectionTitle';
 
 const HeroSection = styled.section`
   height: 100vh;
@@ -18,6 +19,7 @@ const HeroSection = styled.section`
   position: relative;
   display: flex;
   align-items: center;
+  justify-content: center;
 
   &::before {
     content: '';
@@ -67,30 +69,32 @@ const Item = styled.div`
   }
 `;
 
-const MainTitle = styled.h1`
-  position: relative;
-  z-index: 1;
-  color: white;
-  font-family: Helvetica Now Text;
-  font-weight: 800;
-  font-size: 4rem;
+const MainTitle = styled(SectionTitle)`
   max-width: 1440px;
   width: 100%;
-  display: block;
-  text-align: left;
-  margin: auto;
 
-  @media screen and (max-width: 1440px) {
-    padding: 0 36px;
-  }
+  h1 {
+    position: relative;
+    z-index: 1;
+    color: white;
+    font-family: Helvetica Now Text;
+    font-weight: 800;
+    font-size: 4rem;
+    display: block;
+    margin: auto;
 
-  @media screen and (max-width: 425px) {
-    font-size: 3.2rem;
-    padding: 0 36px;
-  }
+    @media screen and (max-width: 1440px) {
+      padding: 0 36px;
+    }
 
-  @media screen and (max-width: 375px) {
-    font-size: 2.3rem;
+    @media screen and (max-width: 425px) {
+      font-size: 3.2rem;
+      padding: 0 36px;
+    }
+
+    @media screen and (max-width: 375px) {
+      font-size: 2.3rem;
+    }
   }
 `;
 
@@ -98,7 +102,7 @@ const IndexPage: React.FC<PageProps> = () => {
   return (
     <Layout>
       <HeroSection>
-        <MainTitle>Nuevos Comienzos</MainTitle>
+        <MainTitle center tag="h1" subtitle="Bienvenido a" title="Un lugar de nuevos comienzos..." light />
         {/* <StaticImage src="../images/nuevos-comienzos-blanco.png" alt="A description" placeholder="none" layout="constrained" style={{ width: '50%' }} /> */}
       </HeroSection>
       <SectionActivities />

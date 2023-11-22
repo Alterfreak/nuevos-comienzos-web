@@ -61,7 +61,7 @@ const StyledButton = styled.button<{
         `;
       }
       return css`
-        background: #121212;
+        background: transparent;
       `;
     }}
   }

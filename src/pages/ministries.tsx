@@ -2,72 +2,134 @@ import * as React from 'react';
 import type { PageProps } from 'gatsby';
 import styled from 'styled-components';
 
+import { StaticImage } from 'gatsby-plugin-image';
 import PageLayout from '../components/pageLayout';
-import Section, { SectionWrapper } from '../components/section';
+import Section from '../components/section';
 import SectionTitle from '../components/sectionTitle';
-import Input from '../components/input';
-import Textarea from '../components/textarea';
 import CustomHead from '../components/customHead';
 import pageData from '../data/pageData';
+import SectionDescription from '../components/sectionDescription';
+import Button from '../components/button';
 
-const StyledSectionWrapper = styled(SectionWrapper)`
-  padding: 0;
+const LogoWrapper = styled.form`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  & > div {
+    max-width: 400px;
+  }
+
+  @media screen and (max-width: 767px) {
+    order: -1;
+  }
 `;
 
-const Map = styled.iframe`
-  width: 100%;
-  border: 0;
-`;
-
-const Form = styled.form`
+const Wrapper = styled.div`
   display: grid;
-  grid-auto-rows: auto;
-  grid-auto-flow: row;
-  gap: 32px;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  z-index: 10;
+  position: relative;
+
+  @media screen and (max-width: 767px) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 const AboutPage: React.FC<PageProps> = () => {
   return (
-    <PageLayout title="Ministerios">
+    <PageLayout title="Nuestros Ministerios">
       <Section>
-        <SectionTitle subtitle="¿tienes una consulta?" title="Envíanos un mensaje" />
-        <div>
-          <Form>
-            <div
-              style={{
-                display: 'grid',
-                width: '100%',
-                gap: '32px',
-                gridTemplateColumns: '1fr 1fr',
-              }}
-            >
-              <Input name="name" id="firstName" label="Tu nombre" />
-              <Input name="lastName" id="lastName" label="Tu apellido" />
-            </div>
-            <div
-              style={{
-                display: 'flex',
-                width: '100%',
-                gap: '32px',
-              }}
-            >
-              <Input name="email" id="email" label="Tu email" />
-              <Input name="phone" id="phone" label="Tu teléfono" />
-            </div>
-            <Textarea name="message" id="message" label="Tu mensaje" />
-          </Form>
-        </div>
+        <Wrapper>
+          <div>
+            <SectionTitle subtitle="JNI" title="Juventud Nazarena Internacional" />
+            <SectionDescription>
+              Nos reunimos semanalmente en diferentes horarios, días y puntos de la ciudad para compartir la palabra de Dios y tener conversaciones
+              significativas.
+              <br />
+              Ven, únete y crece en tu fe mientras te conectas con otros creyentes.
+            </SectionDescription>
+
+            <Button hoverStyle="primary" label="Involucrarme" />
+          </div>
+          <LogoWrapper>
+            <StaticImage src="../images/jni-logo.png" alt="Logo de JNI" placeholder="none" />
+          </LogoWrapper>
+        </Wrapper>
       </Section>
-      <StyledSectionWrapper>
-        <Map
-          src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15666.688501677228!2d-74.8225431!3d10.988102!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8ef42df11bba4e47%3A0xe7f8710eca03a10b!2sIglesia%20del%20Nazareno%20%22Nuevos%20Comienzos%22!5e0!3m2!1sen!2sco!4v1700324443288!5m2!1sen!2sco"
-          width="600"
-          height="450"
-          allowFullScreen={false}
-          loading="lazy"
-          referrerPolicy="no-referrer-when-downgrade"
-        />
-      </StyledSectionWrapper>
+      <Section transparent>
+        <Wrapper>
+          <LogoWrapper>
+            <StaticImage src="../images/mnc-logo.png" alt="Logo de MNC" placeholder="none" />
+          </LogoWrapper>
+          <div>
+            <SectionTitle subtitle="MNC" title="Ministerio Nazareno de Compasión" light />
+            <SectionDescription light>
+              Nos reunimos semanalmente en diferentes horarios, días y puntos de la ciudad para compartir la palabra de Dios y tener conversaciones
+              significativas.
+              <br />
+              Ven, únete y crece en tu fe mientras te conectas con otros creyentes.
+            </SectionDescription>
+
+            <Button hoverStyle="primary" label="Involucrarme" />
+          </div>
+        </Wrapper>
+      </Section>
+      <Section>
+        <Wrapper>
+          <div>
+            <SectionTitle subtitle="MNI" title="Misiones Nazarenas Internacionales" />
+            <SectionDescription>
+              Nos reunimos semanalmente en diferentes horarios, días y puntos de la ciudad para compartir la palabra de Dios y tener conversaciones
+              significativas.
+              <br />
+              Ven, únete y crece en tu fe mientras te conectas con otros creyentes.
+            </SectionDescription>
+
+            <Button hoverStyle="secondary" label="Involucrarme" />
+          </div>
+          <LogoWrapper>
+            <StaticImage src="../images/mni-logo.png" alt="Logo de MNI" placeholder="none" />
+          </LogoWrapper>
+        </Wrapper>
+      </Section>
+      <Section transparent>
+        <Wrapper>
+          <LogoWrapper>
+            <StaticImage src="../images/nazakids-logo.png" alt="Logo de NazaKids" placeholder="none" />
+          </LogoWrapper>
+          <div>
+            <SectionTitle subtitle="Niños" title="NazaKids" light />
+            <SectionDescription light>
+              Nos reunimos semanalmente en diferentes horarios, días y puntos de la ciudad para compartir la palabra de Dios y tener conversaciones
+              significativas.
+              <br />
+              Ven, únete y crece en tu fe mientras te conectas con otros creyentes.
+            </SectionDescription>
+
+            <Button hoverStyle="secondary" label="Involucrarme" />
+          </div>
+        </Wrapper>
+      </Section>
+      <Section>
+        <Wrapper>
+          <div>
+            <SectionTitle subtitle="DNI" title="Discipulado Nazareno Internacional" />
+            <SectionDescription>
+              Nos reunimos semanalmente en diferentes horarios, días y puntos de la ciudad para compartir la palabra de Dios y tener conversaciones
+              significativas.
+              <br />
+              Ven, únete y crece en tu fe mientras te conectas con otros creyentes.
+            </SectionDescription>
+
+            <Button hoverStyle="primary" label="Involucrarme" />
+          </div>
+          <LogoWrapper>
+            <StaticImage src="../images/dni-logo.png" alt="Logo de DNI" placeholder="none" />
+          </LogoWrapper>
+        </Wrapper>
+      </Section>
     </PageLayout>
   );
 };

@@ -62,6 +62,10 @@ const Title = styled.h3<{ center?: boolean }>`
     center &&
     css`
       text-align: center;
+
+      @media screen and (max-width: 424px) {
+        padding: 0 32px;
+      }
     `}
 `;
 
@@ -70,13 +74,17 @@ type Props = {
   subtitle?: string;
   center?: boolean;
   light?: boolean;
+  className?: string;
+  tag?: 'h1';
 };
 
-const SectionTitle: React.FC<Props> = ({ title, subtitle, center = false, light = false }) => {
+const SectionTitle: React.FC<Props> = ({ tag, className, title, subtitle, center = false, light = false }) => {
   return (
-    <Wrapper center={center} light={light}>
+    <Wrapper className={className} center={center} light={light}>
       {subtitle && <SubTitle>{subtitle}</SubTitle>}
-      <Title>{title}</Title>
+      <Title as={tag} center={center}>
+        {title}
+      </Title>
     </Wrapper>
   );
 };

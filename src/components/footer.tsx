@@ -184,13 +184,17 @@ const Footer: React.FC = () => {
             <h3>Iglesia del Nazareno</h3>
             <ul>
               <li>
-                <a href="#home">Artículos de Fe</a>
+                <a href="/articles">Artículos de Fe</a>
               </li>
               <li>
-                <a href="#home">Iglesia Global</a>
+                <a target="_blank" href="https://nazarene.org/" rel="noreferrer">
+                  Iglesia Global
+                </a>
               </li>
               <li>
-                <a href="#home">Misión</a>
+                <a target="_blank" href="https://nazarene.org/index.php/es/misi%C3%B3n" rel="noreferrer">
+                  Misión
+                </a>
               </li>
               <li>
                 <a href="#home">Valores Nazarenos</a>
@@ -201,16 +205,16 @@ const Footer: React.FC = () => {
             <h3>Nosotros</h3>
             <ul>
               <li>
-                <a href="#home">¿Quiénes somos?</a>
+                <a href="/about">¿Quiénes somos?</a>
               </li>
               <li>
-                <a href="#home">¿Dónde estamos?</a>
+                <a href="/contact#map">¿Dónde estamos?</a>
               </li>
               <li>
                 <a href="#home">Oportunidades de servicio</a>
               </li>
               <li>
-                <a href="#home">Valores Nazarenos</a>
+                <a href="#home">Ofrendas</a>
               </li>
             </ul>
           </LinksColumn>
@@ -218,16 +222,26 @@ const Footer: React.FC = () => {
             <h3>Links</h3>
             <ul>
               <li>
-                <a href="#home">Ministerios</a>
+                <a href="/ministries">Ministerios</a>
               </li>
               <li>
-                <a href="#home">Juventud Nazarena Internacional</a>
+                <a target="_blank" href="https://nazarene.org/es/quienes-somos/organizaci%C3%B3n/ministerios/juventud-nazarena-internacional" rel="noreferrer">
+                  Juventud Nazarena Internacional
+                </a>
               </li>
               <li>
-                <a href="#home">Misiones Nazarenas Internacionales</a>
+                <a
+                  target="_blank"
+                  href="https://nazarene.org/es/quienes-somos/organizaci%C3%B3n/ministerios/misiones-nazarenas-internacionales"
+                  rel="noreferrer"
+                >
+                  Misiones Nazarenas Internacionales
+                </a>
               </li>
               <li>
-                <a href="#home">Discipulado Nazareno Internacional </a>
+                <a target="_blank" href="https://nazarene.org/es/quienes-somos/organization/ministries/sdmi" rel="noreferrer">
+                  Discipulado Nazareno Internacional{' '}
+                </a>
               </li>
             </ul>
           </LinksColumn>
@@ -245,7 +259,11 @@ const Footer: React.FC = () => {
               <ContactItem>
                 <BiLogoWhatsapp color="white" size={22} />
                 <Text>
-                  <a href="https://wa.me/573243158514?text=%C2%A1Hola%20Iglesia%20del%20Nazareno!%20Deseo%20saber%20m%C3%A1s%20de%20la%20iglesia.">
+                  <a
+                    target="_blank"
+                    href="https://wa.me/573243158514?text=%C2%A1Hola%20Iglesia%20del%20Nazareno!%20Deseo%20saber%20m%C3%A1s%20de%20la%20iglesia."
+                    rel="noreferrer"
+                  >
                     +57 324 3158514
                   </a>
                 </Text>
