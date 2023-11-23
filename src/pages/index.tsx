@@ -82,6 +82,8 @@ const MainTitle = styled(SectionTitle)`
     font-size: 4rem;
     display: block;
     margin: auto;
+    text-transform: uppercase;
+    letter-spacing: -2px;
 
     @media screen and (max-width: 1440px) {
       padding: 0 36px;
