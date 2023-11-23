@@ -78,7 +78,7 @@ const MainTitle = styled(SectionTitle)`
     z-index: 1;
     color: white;
     font-family: Helvetica Now Text;
-    font-weight: 800;
+    font-weight: 900;
     font-size: 4rem;
     display: block;
     margin: auto;
@@ -102,7 +102,17 @@ const IndexPage: React.FC<PageProps> = () => {
   return (
     <Layout>
       <HeroSection>
-        <MainTitle center tag="h1" subtitle="Bienvenido a" title="Un lugar de nuevos comienzos..." light />
+        <MainTitle
+          center
+          tag="h1"
+          subtitle="Bienvenido a"
+          title={
+            <>
+              Un lugar de nuevos comienzos<span style={{ color: 'var(--contrast)' }}>...</span>
+            </>
+          }
+          light
+        />
         {/* <StaticImage src="../images/nuevos-comienzos-blanco.png" alt="A description" placeholder="none" layout="constrained" style={{ width: '50%' }} /> */}
       </HeroSection>
       <SectionActivities />

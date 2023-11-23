@@ -70,7 +70,7 @@ const Title = styled.h3<{ center?: boolean }>`
 `;
 
 type Props = {
-  title: string;
+  title: string | JSX.Element;
   subtitle?: string;
   center?: boolean;
   light?: boolean;

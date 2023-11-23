@@ -24,7 +24,7 @@ const HeroSection = styled.section`
 
 const Title = styled.h1`
   font-family: Helvetica Now Text;
-  font-weight: 700;
+  font-weight: 900;
   font-size: 62px;
   color: white;
   text-transform: uppercase;
