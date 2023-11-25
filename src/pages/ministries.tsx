@@ -65,7 +65,7 @@ const AboutPage: React.FC<PageProps> = () => {
           </LogoWrapper>
           <div>
             <SectionTitle subtitle="MNC" title="Ministerio Nazareno de Compasión" light />
-            <SectionDescription light>
+            <SectionDescription $light>
               Nos reunimos semanalmente en diferentes horarios, días y puntos de la ciudad para compartir la palabra de Dios y tener conversaciones
               significativas.
               <br />
@@ -101,7 +101,7 @@ const AboutPage: React.FC<PageProps> = () => {
           </LogoWrapper>
           <div>
             <SectionTitle subtitle="Niños" title="NazaKids" light />
-            <SectionDescription light>
+            <SectionDescription $light>
               Nos reunimos semanalmente en diferentes horarios, días y puntos de la ciudad para compartir la palabra de Dios y tener conversaciones
               significativas.
               <br />

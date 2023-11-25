@@ -2,11 +2,11 @@ import React from 'react';
 import styled, { css } from 'styled-components';
 
 export const SectionWrapper = styled.section<{
-  fullWidth?: boolean;
-  transparent?: boolean;
+  $fullWidth?: boolean;
+  $transparent?: boolean;
 }>`
-  ${({ transparent }) =>
-    !transparent &&
+  ${({ $transparent }) =>
+    !$transparent &&
     css`
       background: white;
     `}
@@ -15,16 +15,16 @@ export const SectionWrapper = styled.section<{
   box-sizing: border-box;
   padding: 64px 0;
 
-  ${({ fullWidth }) =>
-    !fullWidth &&
+  ${({ $fullWidth }) =>
+    !$fullWidth &&
     css`
       padding: 64px 24px;
       display: flex;
     `}
 
   @media screen and (max-width: 1319px) {
-    ${({ fullWidth }) =>
-      !fullWidth &&
+    ${({ $fullWidth }) =>
+      !$fullWidth &&
       css`
         padding: 64px 24px;
       `}
@@ -46,13 +46,13 @@ type Props = {
 const Section: React.FC<React.PropsWithChildren<Props>> = ({ children, className, fullWidth = false, transparent = false }) => {
   if (fullWidth) {
     return (
-      <SectionWrapper transparent={transparent} fullWidth className={className}>
+      <SectionWrapper $transparent={transparent} $fullWidth className={className}>
         {children}
       </SectionWrapper>
     );
   }
   return (
-    <SectionWrapper transparent={transparent} className={className}>
+    <SectionWrapper $transparent={transparent} className={className}>
       <Content>{children}</Content>
     </SectionWrapper>
   );

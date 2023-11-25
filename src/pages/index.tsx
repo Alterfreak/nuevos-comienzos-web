@@ -32,12 +32,12 @@ const HeroSection = styled.section`
   }
 `;
 
-const GridRow = styled.div<{ columns: number }>`
+const GridRow = styled.div<{ $columns: number }>`
   display: grid;
   gap: 24px;
 
-  ${({ columns }) => css`
-    grid-template-columns: repeat(${columns}, 1fr);
+  ${({ $columns }) => css`
+    grid-template-columns: repeat(${$columns}, 1fr);
   `}
 
   @media screen and (max-width: 1150px) {
@@ -120,7 +120,7 @@ const IndexPage: React.FC<PageProps> = () => {
       <SectionActivities />
       <SectionGroups />
       <Section>
-        <GridRow columns={3}>
+        <GridRow $columns={3}>
           <Item>
             <StaticImage src="../images/jni-logo.png" alt="A description" placeholder="none" layout="fixed" height={95} />
             <p>

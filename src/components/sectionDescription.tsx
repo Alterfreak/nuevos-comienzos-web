@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-const SectionDescription = styled.p<{ light?: boolean }>`
+const SectionDescription = styled.p<{ $light?: boolean }>`
   font-family: Outfit;
   font-weight: 400;
   font-size: 20px;
@@ -8,8 +8,8 @@ const SectionDescription = styled.p<{ light?: boolean }>`
   margin-bottom: 30px;
   margin-top: 30px;
 
-  ${({ light }) =>
-    light
+  ${({ $light }) =>
+    $light
       ? css`
           color: #e1e1e1;
         `

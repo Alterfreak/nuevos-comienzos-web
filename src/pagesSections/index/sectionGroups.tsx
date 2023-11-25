@@ -80,7 +80,7 @@ const SectionGroups: React.FC = () => {
         <div>
           <SectionTitle subtitle="visitános en" title="Grupos de conexión" light />
 
-          <SectionDescription light>
+          <SectionDescription $light>
             Nos reunimos semanalmente en diferentes horarios, días y puntos de la ciudad para compartir la palabra de Dios y tener conversaciones
             significativas.
             <br />

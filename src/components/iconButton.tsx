@@ -5,7 +5,7 @@ import { BiMenu, BiX, BiChevronRight, BiChevronLeft } from 'react-icons/bi';
 type Kind = 'primary' | 'secondary';
 
 const StyledButton = styled.button<{
-  hoverStyle: Kind;
+  $hoverStyle: Kind;
   kind: Kind;
   type: 'filled' | 'default';
 }>`
@@ -44,8 +44,8 @@ const StyledButton = styled.button<{
   }}
 
   &:hover {
-    ${({ hoverStyle }) => {
-      if (hoverStyle === 'secondary') {
+    ${({ $hoverStyle }) => {
+      if ($hoverStyle === 'secondary') {
         return css`
           color: #121212;
         `;
@@ -95,7 +95,7 @@ const IconButton: React.FC<Props> = ({ iconName, className, onClick, kind = 'pri
       break;
   }
   return (
-    <StyledButton onClick={onClick} type={type} className={className} kind={kind} hoverStyle={hoverStyle}>
+    <StyledButton onClick={onClick} type={type} className={className} kind={kind} $hoverStyle={hoverStyle}>
       {Icon}
     </StyledButton>
   );

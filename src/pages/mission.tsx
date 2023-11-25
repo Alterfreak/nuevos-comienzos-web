@@ -7,23 +7,11 @@ import Section from '../components/section';
 import SectionTitle from '../components/sectionTitle';
 import CustomHead from '../components/customHead';
 import pageData from '../data/pageData';
-import InfoItem from '../components/infoItem';
 
 const ArticlesList = styled.div`
   display: flex;
   flex-direction: column;
   gap: 40px;
-`;
-
-const ArticleItem = styled(InfoItem)`
-  position: relative;
-  &::after {
-    content: '';
-    border-top: 1px solid rgba(150, 150, 150, 0.3);
-    position: absolute;
-    width: 100%;
-    bottom: -20px;
-  }
 `;
 
 const Mission: React.FC<PageProps> = () => {
