@@ -10,27 +10,7 @@ import CustomHead from '../components/customHead';
 import pageData from '../data/pageData';
 import SectionGroups from '../pagesSections/index/sectionGroups';
 import SectionActivities from '../pagesSections/index/sectionActivities';
-import SectionTitle from '../components/sectionTitle';
-
-const HeroSection = styled.section`
-  height: 100vh;
-  max-height: 940px;
-  background-image: url('/images/hero.png');
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  &::before {
-    content: '';
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    z-index: 0;
-    background: #222324;
-    opacity: 0.9;
-  }
-`;
+import SectionHero from '../pagesSections/index/sectionHero';
 
 const GridRow = styled.div<{ $columns: number }>`
   display: grid;
@@ -69,54 +49,10 @@ const Item = styled.div`
   }
 `;
 
-const MainTitle = styled(SectionTitle)`
-  max-width: 1440px;
-  width: 100%;
-
-  h1 {
-    position: relative;
-    z-index: 1;
-    color: white;
-    font-family: Helvetica Now Text;
-    font-weight: 900;
-    font-size: 4rem;
-    display: block;
-    margin: auto;
-    text-transform: uppercase;
-    letter-spacing: -2px;
-
-    @media screen and (max-width: 1440px) {
-      padding: 0 36px;
-    }
-
-    @media screen and (max-width: 425px) {
-      font-size: 3.2rem;
-      padding: 0 36px;
-    }
-
-    @media screen and (max-width: 375px) {
-      font-size: 2.3rem;
-    }
-  }
-`;
-
 const IndexPage: React.FC<PageProps> = () => {
   return (
     <Layout>
-      <HeroSection>
-        <MainTitle
-          center
-          tag="h1"
-          subtitle="Bienvenido a"
-          title={
-            <>
-              Un lugar de nuevos comienzos<span style={{ color: 'var(--contrast)' }}>...</span>
-            </>
-          }
-          light
-        />
-        {/* <StaticImage src="../images/nuevos-comienzos-blanco.png" alt="A description" placeholder="none" layout="constrained" style={{ width: '50%' }} /> */}
-      </HeroSection>
+      <SectionHero />
       <SectionActivities />
       <SectionGroups />
       <Section>

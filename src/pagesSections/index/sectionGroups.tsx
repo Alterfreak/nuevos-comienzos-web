@@ -55,21 +55,25 @@ const groups = [
     id: 'group1',
     title: 'Alameda del Río',
     description: 'Todos los LUNES a las 7pm',
+    link: 'https://maps.app.goo.gl/44Mejoa7TyoamTHE9',
   },
   {
     id: 'group2',
     title: 'Ciudad Jardín',
     description: 'Todos los JUEVES a las 7pm',
+    link: 'https://maps.app.goo.gl/44Mejoa7TyoamTHE9',
   },
   {
     id: 'group3',
     title: 'Kalamary',
     description: 'Todos los JUEVES a las 7pm',
+    link: 'https://maps.app.goo.gl/44Mejoa7TyoamTHE9',
   },
   {
     id: 'group4',
     title: 'Miramar',
     description: 'Todos los VIERNES a las 7pm',
+    link: 'https://maps.app.goo.gl/44Mejoa7TyoamTHE9',
   },
 ];
 
@@ -91,7 +95,7 @@ const SectionGroups: React.FC = () => {
         </div>
         <ItemList>
           {groups.map(g => (
-            <InfoItem light title={g.title} description={g.description} key={g.id} Icon={<BiRadioCircleMarked size={80} />} />
+            <InfoItem onClick={() => {}} light title={g.title} description={g.description} key={g.id} Icon={<BiRadioCircleMarked size={80} />} />
           ))}
         </ItemList>
       </Wrapper>

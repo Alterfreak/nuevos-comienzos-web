@@ -1,10 +1,16 @@
 import * as React from 'react';
 import styled, { css } from 'styled-components';
 
-const Item = styled.div<{ $light: boolean }>`
+const Item = styled.div<{ $light: boolean; $clickable: boolean }>`
   display: flex;
   gap: 24px;
   color: black;
+
+  ${({ $clickable }) =>
+    $clickable &&
+    css`
+      cursor: pointer;
+    `}
 
   ${({ $light }) =>
     $light &&
@@ -58,11 +64,12 @@ type Props = {
   Icon: JSX.Element | null;
   iconPosition?: 'left' | 'right';
   alignment?: 'left' | 'right';
+  onClick?: () => void;
 };
 
-const InfoItem: React.FC<Props> = ({ title, alignment = 'left', description, className, light = false, Icon, iconPosition = 'left' }) => {
+const InfoItem: React.FC<Props> = ({ title, onClick, alignment = 'left', description, className, light = false, Icon, iconPosition = 'left' }) => {
   return (
-    <Item $light={light} className={className}>
+    <Item $clickable={!!onClick} onClick={onClick} $light={light} className={className}>
       {iconPosition === 'left' && Icon}
       <TextWrapper $position={alignment}>
         <ItemTitle $position={alignment}>{title}</ItemTitle>

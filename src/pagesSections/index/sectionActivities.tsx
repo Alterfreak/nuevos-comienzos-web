@@ -20,6 +20,8 @@ const SliderItem = styled.div`
     object-fit: cover;
     object-position: center;
     border-radius: 16px;
+    width: 450px;
+    height: 800px;
   }
 
   @media screen and (max-width: 425px) {

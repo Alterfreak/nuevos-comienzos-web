@@ -45,10 +45,9 @@ const AboutPage: React.FC<PageProps> = () => {
           <div>
             <SectionTitle subtitle="JNI" title="Juventud Nazarena Internacional" />
             <SectionDescription>
-              Nos reunimos semanalmente en diferentes horarios, días y puntos de la ciudad para compartir la palabra de Dios y tener conversaciones
-              significativas.
+              Trabajamos con un enfoque en liderazgo generacional, entrenando y discipulando a nuestros jóvenes. Siendo fieles a la palabra de Dios pero también
+              sensibles a las nuevas generaciones.
               <br />
-              Ven, únete y crece en tu fe mientras te conectas con otros creyentes.
             </SectionDescription>
 
             <Button hoverStyle="primary" label="Involucrarme" />
@@ -66,13 +65,15 @@ const AboutPage: React.FC<PageProps> = () => {
           <div>
             <SectionTitle subtitle="MNC" title="Ministerio Nazareno de Compasión" light />
             <SectionDescription $light>
-              Nos reunimos semanalmente en diferentes horarios, días y puntos de la ciudad para compartir la palabra de Dios y tener conversaciones
-              significativas.
+              Siguiendo el ejemplo de nuestro Señor Jesús, buscamos impactar nuestra comunidad barranquillera a través de actos de compasión.
               <br />
-              Ven, únete y crece en tu fe mientras te conectas con otros creyentes.
+              Apoyamos el comedor infantil de la Iglesia del Nazareno - Bienvenido a casa, pero también contamos con algunos proyectos de compasión con talleres
+              de oficios, visita a hospitales, y recaudamos mensualmente un fondo de alimentos para bendecir a otros.
+              <br />
+              ¡Te invitamos a que puedas hacer tu contribución a este ministerio!
             </SectionDescription>
 
-            <Button hoverStyle="primary" label="Involucrarme" />
+            <Button hoverStyle="secondary" label="¡Quiero ayudar!" />
           </div>
         </Wrapper>
       </Section>
@@ -81,13 +82,12 @@ const AboutPage: React.FC<PageProps> = () => {
           <div>
             <SectionTitle subtitle="MNI" title="Misiones Nazarenas Internacionales" />
             <SectionDescription>
-              Nos reunimos semanalmente en diferentes horarios, días y puntos de la ciudad para compartir la palabra de Dios y tener conversaciones
-              significativas.
+              Uno de los valores esenciales de nuestra iglesia es que somos un pueblo misional. A través de este ministerio Nosotros fomentamos las misiones,
+              enseñamos a escuchar el llamado y preparamos el camino para probar lo que es servir al Señor a través de misiones.
               <br />
-              Ven, únete y crece en tu fe mientras te conectas con otros creyentes.
             </SectionDescription>
 
-            <Button hoverStyle="secondary" label="Involucrarme" />
+            <Button hoverStyle="primary" label="¡Quiero saber más!" />
           </div>
           <LogoWrapper>
             <StaticImage src="../images/mni-logo.png" alt="Logo de MNI" placeholder="none" />
@@ -102,13 +102,12 @@ const AboutPage: React.FC<PageProps> = () => {
           <div>
             <SectionTitle subtitle="Niños" title="NazaKids" light />
             <SectionDescription $light>
-              Nos reunimos semanalmente en diferentes horarios, días y puntos de la ciudad para compartir la palabra de Dios y tener conversaciones
-              significativas.
+              Al igual que trabajamos discipulando y entrenando jóvenes, también no enfocamos en los niños para prepararlos para pasar a JNI. Nos enfocamos no
+              solo en tener un tiempo divertido y cuidarlos, sino que también buscamos que ellos crezcan espiritualmente y en conocimiento de la palabra.
               <br />
-              Ven, únete y crece en tu fe mientras te conectas con otros creyentes.
             </SectionDescription>
 
-            <Button hoverStyle="secondary" label="Involucrarme" />
+            <Button hoverStyle="secondary" label="¡Quiero saber más!" />
           </div>
         </Wrapper>
       </Section>
@@ -117,13 +116,12 @@ const AboutPage: React.FC<PageProps> = () => {
           <div>
             <SectionTitle subtitle="DNI" title="Discipulado Nazareno Internacional" />
             <SectionDescription>
-              Nos reunimos semanalmente en diferentes horarios, días y puntos de la ciudad para compartir la palabra de Dios y tener conversaciones
-              significativas.
+              A través de este ministerio proveemos plataformas de discipulado y educación teológica. Nos enfocamos en preparar no solo personas que sirvan a
+              Dios o que ayuden en la iglesia, si no que preparamos ministros del evangelio capacitados para la obra.
               <br />
-              Ven, únete y crece en tu fe mientras te conectas con otros creyentes.
             </SectionDescription>
 
-            <Button hoverStyle="primary" label="Involucrarme" />
+            <Button hoverStyle="primary" label="¡Quiero aprender!" />
           </div>
           <LogoWrapper>
             <StaticImage src="../images/dni-logo.png" alt="Logo de DNI" placeholder="none" />
