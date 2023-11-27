@@ -76,7 +76,7 @@ const SectionHero: React.FC = () => {
         }
         light
       />
-      <Video autoPlay loop muted poster="https://assets.codepen.io/6093409/river.jpg">
+      <Video autoPlay loop muted poster="/images/bg-thumbnail.png">
         <source src="/images/bg.mp4" type="video/mp4" />
       </Video>
       {/* <StaticImage src="../images/nuevos-comienzos-blanco.png" alt="A description" placeholder="none" layout="constrained" style={{ width: '50%' }} /> */}
