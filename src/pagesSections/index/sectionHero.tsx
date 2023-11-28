@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import SectionTitle from '../../components/sectionTitle';
 import { StaticImage } from 'gatsby-plugin-image';
+import SectionTitle from '../../components/sectionTitle';
 
 const MainTitle = styled(SectionTitle)`
   max-width: 1440px;
