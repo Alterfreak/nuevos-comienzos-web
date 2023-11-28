@@ -7,7 +7,7 @@ const HeroSection = styled.section`
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: url('/images/hero.webp');
+  background-image: url('/images/bg-page-sections.webp');
   position: relative;
   background-position: 0 -60px;
 
