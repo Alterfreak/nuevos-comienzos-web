@@ -1,37 +1,27 @@
 const events = [
   {
+    id: 'miercoles',
+    image: '../images/ad-culto.webp',
+    description: 'placeholder',
+  },
+  {
     id: 'lunes',
-    image: 'https://placehold.co/450x800/orange/white',
+    image: '../images/ad-alborada.webp',
     description: 'placeholder',
   },
   {
     id: 'martes',
-    image: 'https://placehold.co/450x800/green/white',
-    description: 'placeholder',
-  },
-  {
-    id: 'miercoles',
-    image: 'https://placehold.co/450x800/blue/white',
+    image: '../images/ad-estudio-biblico.webp',
     description: 'placeholder',
   },
   {
     id: 'jueves',
-    image: 'https://placehold.co/450x800/red/white',
+    image: '../images/ad-miercoles-oracion.webp',
     description: 'placeholder',
   },
   {
     id: 'viernes',
-    image: 'https://placehold.co/450x800/yellow/white',
-    description: 'placeholder',
-  },
-  {
-    id: 'sábado',
-    image: 'https://placehold.co/450x800/black/white',
-    description: 'placeholder',
-  },
-  {
-    id: 'domingo',
-    image: 'https://placehold.co/450x800/gray/white',
+    image: '../images/ad-jni.webp',
     description: 'placeholder',
   },
 ];

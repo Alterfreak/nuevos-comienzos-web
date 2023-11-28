@@ -163,10 +163,10 @@ const Footer: React.FC = () => {
         <ImagesWrapper>
           <LogosWrapper>
             <a href="#home">
-              <StaticImage src="../images/ancho-blanco-norte.png" alt="A description" placeholder="blurred" layout="fixed" height={95} />
+              <StaticImage src="../images/ancho-blanco-norte.webp" alt="A description" placeholder="blurred" layout="fixed" height={95} />
             </a>
             <a href="#home">
-              <StaticImage src="../images/nuevos-comienzos-blanco.png" alt="A description" placeholder="blurred" layout="fixed" height={95} />
+              <StaticImage src="../images/nuevos-comienzos-blanco.webp" alt="A description" placeholder="blurred" layout="fixed" height={95} />
             </a>
           </LogosWrapper>
           <SocialNetworks>

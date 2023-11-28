@@ -58,7 +58,7 @@ const IndexPage: React.FC<PageProps> = () => {
       <Section>
         <GridRow $columns={3}>
           <Item>
-            <StaticImage src="../images/jni-logo.png" alt="A description" placeholder="none" layout="fixed" height={95} />
+            <StaticImage src="../images/jni-logo.webp" alt="A description" placeholder="none" layout="fixed" height={95} />
             <p>
               Creemos que los jóvenes son importantes y tienen un gran potencial para impactar el mundo.
               <br />
@@ -68,7 +68,7 @@ const IndexPage: React.FC<PageProps> = () => {
           </Item>
 
           <Item>
-            <StaticImage src="../images/mni-logo.png" alt="A description" placeholder="none" layout="constrained" style={{ width: '50%' }} />
+            <StaticImage src="../images/mni-logo.webp" alt="A description" placeholder="none" layout="constrained" style={{ width: '50%' }} />
             <p>
               Debemos llevar el mensaje de Jesús a todo el mundo y enseñar a las personas sobre el amor de Dios. Por eso, a través de este ministerio para
               involucrar a nuestra comunidad en las misiones.
@@ -77,7 +77,7 @@ const IndexPage: React.FC<PageProps> = () => {
           </Item>
 
           <Item>
-            <StaticImage src="../images/dni-logo.png" alt="A description" placeholder="none" layout="fixed" height={95} />
+            <StaticImage src="../images/dni-logo.webp" alt="A description" placeholder="none" layout="fixed" height={95} />
             <p>
               Creemos que el discipulado es esencial para fortalecer nuestra fe y desarrollar una relación más profunda con Dios.
               <br />

@@ -53,14 +53,14 @@ const AboutPage: React.FC<PageProps> = () => {
             <Button hoverStyle="primary" label="Involucrarme" />
           </div>
           <LogoWrapper>
-            <StaticImage src="../images/jni-logo.png" alt="Logo de JNI" placeholder="none" />
+            <StaticImage src="../images/jni-logo.webp" alt="Logo de JNI" placeholder="none" />
           </LogoWrapper>
         </Wrapper>
       </Section>
       <Section transparent>
         <Wrapper>
           <LogoWrapper>
-            <StaticImage src="../images/mnc-logo.png" alt="Logo de MNC" placeholder="none" />
+            <StaticImage src="../images/mnc-logo.webp" alt="Logo de MNC" placeholder="none" />
           </LogoWrapper>
           <div>
             <SectionTitle subtitle="MNC" title="Ministerio Nazareno de Compasión" light />
@@ -90,14 +90,14 @@ const AboutPage: React.FC<PageProps> = () => {
             <Button hoverStyle="primary" label="¡Quiero saber más!" />
           </div>
           <LogoWrapper>
-            <StaticImage src="../images/mni-logo.png" alt="Logo de MNI" placeholder="none" />
+            <StaticImage src="../images/mni-logo.webp" alt="Logo de MNI" placeholder="none" />
           </LogoWrapper>
         </Wrapper>
       </Section>
       <Section transparent>
         <Wrapper>
           <LogoWrapper>
-            <StaticImage src="../images/nazakids-logo.png" alt="Logo de NazaKids" placeholder="none" />
+            <StaticImage src="../images/nazakids-logo.webp" alt="Logo de NazaKids" placeholder="none" />
           </LogoWrapper>
           <div>
             <SectionTitle subtitle="Niños" title="NazaKids" light />
@@ -124,7 +124,7 @@ const AboutPage: React.FC<PageProps> = () => {
             <Button hoverStyle="primary" label="¡Quiero aprender!" />
           </div>
           <LogoWrapper>
-            <StaticImage src="../images/dni-logo.png" alt="Logo de DNI" placeholder="none" />
+            <StaticImage src="../images/dni-logo.webp" alt="Logo de DNI" placeholder="none" />
           </LogoWrapper>
         </Wrapper>
       </Section>

@@ -1,3 +1,4 @@
+import { Script } from 'gatsby';
 import React from 'react';
 
 const script = `if (window.netlifyIdentity) {
@@ -14,7 +15,7 @@ const CustomHead: React.FC<{ title: string; description: string }> = ({ title, d
   return (
     <>
       <html lang="es" />
-      <script src="https://identity.netlify.com/v1/netlify-identity-widget.js" />
+      <Script src="https://identity.netlify.com/v1/netlify-identity-widget.js" />
       <title>{title}</title>
       <meta name="description" content={description} />
       <script>{script}</script>

@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import SectionTitle from '../../components/sectionTitle';
+import { StaticImage } from 'gatsby-plugin-image';
 
 const MainTitle = styled(SectionTitle)`
   max-width: 1440px;
@@ -55,12 +56,12 @@ const HeroSection = styled.section`
   }
 `;
 
-const Video = styled.video`
+/* const Video = styled.video`
   position: absolute;
-  width: 100vw;
+  width: calc(100vw - 20px);
   object-fit: cover;
   height: 100vh;
-`;
+`; */
 
 const SectionHero: React.FC = () => {
   return (
@@ -76,10 +77,17 @@ const SectionHero: React.FC = () => {
         }
         light
       />
-      <Video autoPlay loop muted poster="/images/bg-thumbnail.png">
+      <StaticImage
+        src="../../images/bg-thumbnail.webp"
+        alt="A description"
+        placeholder="none"
+        layout="constrained"
+        style={{ height: '100vh', width: 'calc(100vw - 20px)', position: 'absolute' }}
+      />
+      {/* <Video autoPlay loop muted poster="/images/bg-thumbnail.webp">
         <source src="/images/bg.mp4" type="video/mp4" />
-      </Video>
-      {/* <StaticImage src="../images/nuevos-comienzos-blanco.png" alt="A description" placeholder="none" layout="constrained" style={{ width: '50%' }} /> */}
+      </Video> */}
+      {/* <StaticImage src="../images/nuevos-comienzos-blanco.webp" alt="A description" placeholder="none" layout="constrained" style={{ width: '50%' }} /> */}
     </HeroSection>
   );
 };

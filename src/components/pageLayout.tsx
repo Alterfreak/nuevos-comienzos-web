@@ -7,7 +7,7 @@ const HeroSection = styled.section`
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: url('/images/hero.png');
+  background-image: url('/images/hero.webp');
   position: relative;
   background-position: 0 -60px;
 

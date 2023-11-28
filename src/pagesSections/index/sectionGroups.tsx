@@ -31,7 +31,7 @@ const ItemList = styled.div`
 `;
 
 const StyledSection = styled(Section)`
-  background-image: url('/images/barranquilla-skyline.jpeg');
+  background-image: url('/images/barranquilla-skyline.webp');
   position: relative;
   background-attachment: fixed;
   background-position: center;

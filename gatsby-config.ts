@@ -1,6 +1,8 @@
 import type { GatsbyConfig } from "gatsby";
+import netlifyAdapter from 'gatsby-adapter-netlify';
 
 const config: GatsbyConfig = {
+  adapter: netlifyAdapter(),
   flags: {
     DEV_SSR: true
   },
@@ -13,6 +15,12 @@ const config: GatsbyConfig = {
   // Learn more at: https://gatsby.dev/graphql-typegen
   graphqlTypegen: true,
   plugins: [
+    {
+      resolve: "gatsby-plugin-webpack-bundle-analyser-v2",
+      options: {
+        devMode: true,
+      },
+    },
     "gatsby-plugin-decap-cms",
     "gatsby-plugin-postcss",
     "gatsby-plugin-image",
@@ -20,7 +28,7 @@ const config: GatsbyConfig = {
     {
       resolve: "gatsby-plugin-manifest",
       options: {
-        icon: "src/images/icon.png",
+        icon: "src/images/icon.webp",
       },
     },
     "gatsby-plugin-styled-components",

@@ -83,7 +83,7 @@ const Navbar: React.FC = () => {
   const MenuDrawer = (
     <Drawer side="right" open={open} onClose={() => setOpen(false)}>
       <StaticImage
-        src="../images/nuevos-comienzos-largo-oscuro.png"
+        src="../images/nuevos-comienzos-largo-oscuro.webp"
         alt="Logo iglesia del nazareno nuevos comienzos"
         placeholder="blurred"
         layout="fixed"
@@ -114,7 +114,7 @@ const Navbar: React.FC = () => {
       <Wrapper>
         <Link to="/">
           <StaticImage
-            src="../images/nuevos-comienzos-largo-blanco.png"
+            src="../images/nuevos-comienzos-largo-blanco.webp"
             alt="Logo iglesia del nazareno nuevos comienzos"
             placeholder="blurred"
             layout="fixed"
