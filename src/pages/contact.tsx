@@ -73,19 +73,19 @@ const ContactPage: React.FC<PageProps> = () => {
             </SectionDescription>
           </div>
           <div>
-            <Form>
+            <Form name="contact" method="POST" data-netlify="true">
               <FormRow>
-                <Input name="name" id="firstName" label="Tu nombre" />
-                <Input name="lastName" id="lastName" label="Tu apellido" />
+                <Input name="name" type="text" id="firstName" label="Tu nombre" required />
+                <Input name="lastName" type="text" id="lastName" label="Tu apellido" required />
               </FormRow>
               <FormRow>
-                <Input name="email" id="email" label="Tu email" />
-                <Input name="phone" id="phone" label="Tu teléfono" />
+                <Input name="email" type="email" id="email" label="Tu email" />
+                <Input name="phone" type="tel" id="phone" label="Tu teléfono" />
               </FormRow>
-              <Textarea name="message" id="message" label="Tu mensaje" />
+              <Textarea required name="message" id="message" label="Tu mensaje" />
               <FormRow>
                 <div />
-                <Button hoverStyle="primary" label="Enviar mensaje" />
+                <Button type="submit" hoverStyle="primary" label="Enviar mensaje" />
               </FormRow>
             </Form>
           </div>
