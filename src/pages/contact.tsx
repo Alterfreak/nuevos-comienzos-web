@@ -21,11 +21,13 @@ const Map = styled.iframe`
   border: 0;
 `;
 
-const Form = styled.form`
-  display: grid;
-  grid-auto-rows: auto;
-  grid-auto-flow: row;
-  gap: 32px;
+const FormWrapper = styled.form`
+  form {
+    display: grid;
+    grid-auto-rows: auto;
+    grid-auto-flow: row;
+    gap: 32px;
+  }
 `;
 
 const FormRow = styled.div`
@@ -72,8 +74,8 @@ const ContactPage: React.FC<PageProps> = () => {
               Ven, únete y crece en tu fe mientras te conectas con otros creyentes.
             </SectionDescription>
           </div>
-          <div>
-            <Form name="contact" method="POST" data-netlify="true">
+          <FormWrapper>
+            <form name="contact" method="POST" data-netlify="true">
               <FormRow>
                 <Input name="name" type="text" id="firstName" label="Tu nombre" required />
                 <Input name="lastName" type="text" id="lastName" label="Tu apellido" required />
@@ -87,8 +89,8 @@ const ContactPage: React.FC<PageProps> = () => {
                 <div />
                 <Button type="submit" hoverStyle="primary" label="Enviar mensaje" />
               </FormRow>
-            </Form>
-          </div>
+            </form>
+          </FormWrapper>
         </Wrapper>
       </Section>
       <StyledSectionWrapper>
