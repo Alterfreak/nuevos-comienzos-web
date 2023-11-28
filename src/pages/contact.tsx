@@ -57,7 +57,7 @@ const Wrapper = styled.div`
   }
 `;
 
-const ContactPage: React.FC<PageProps> = () => {
+const ContactPage: React.FC<PageProps> = ({ location }) => {
   const formRef = useRef<HTMLFormElement>(null);
   return (
     <PageLayout title="Contáctanos">
@@ -76,7 +76,8 @@ const ContactPage: React.FC<PageProps> = () => {
           <div>
             <Form
               ref={formRef}
-              method="post"
+              name="contact"
+              method="POST"
               onSubmit={async event => {
                 try {
                   event.preventDefault();
@@ -84,7 +85,7 @@ const ContactPage: React.FC<PageProps> = () => {
 
                   const formData = new FormData(formRef.current);
 
-                  await fetch('/', {
+                  await fetch(location.pathname, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
                     // @ts-ignore
@@ -112,7 +113,7 @@ const ContactPage: React.FC<PageProps> = () => {
                 <div />
                 <Button type="submit" hoverStyle="primary" label="Enviar mensaje" />
               </FormRow>
-              <Input name="contact" type="hidden" />
+              <input name="form-name" value="contact" type="hidden" />
             </Form>
           </div>
         </Wrapper>
