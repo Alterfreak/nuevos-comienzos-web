@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { useRef } from 'react';
 import type { PageProps } from 'gatsby';
 import styled from 'styled-components';
 
@@ -21,13 +21,11 @@ const Map = styled.iframe`
   border: 0;
 `;
 
-const FormWrapper = styled.form`
-  form {
-    display: grid;
-    grid-auto-rows: auto;
-    grid-auto-flow: row;
-    gap: 32px;
-  }
+const Form = styled.form`
+  display: grid;
+  grid-auto-rows: auto;
+  grid-auto-flow: row;
+  gap: 32px;
 `;
 
 const FormRow = styled.div`
@@ -60,6 +58,7 @@ const Wrapper = styled.div`
 `;
 
 const ContactPage: React.FC<PageProps> = () => {
+  const formRef = useRef<HTMLFormElement>(null);
   return (
     <PageLayout title="Contáctanos">
       <Section>
@@ -74,8 +73,32 @@ const ContactPage: React.FC<PageProps> = () => {
               Ven, únete y crece en tu fe mientras te conectas con otros creyentes.
             </SectionDescription>
           </div>
-          <FormWrapper>
-            <form name="contact" method="POST" data-netlify="true">
+          <div>
+            <Form
+              ref={formRef}
+              method="post"
+              onSubmit={async event => {
+                try {
+                  event.preventDefault();
+                  if (!formRef.current) return;
+
+                  const formData = new FormData(formRef.current);
+
+                  await fetch('/', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                    // @ts-ignore
+                    body: new URLSearchParams(formData).toString(),
+                  });
+
+                  alert('¡Mensaje enviado!');
+                  formRef.current.reset();
+                } catch (error) {
+                  alert('Ocurrió un error intenta más tarde.');
+                }
+              }}
+              data-netlify="true"
+            >
               <FormRow>
                 <Input name="name" type="text" id="firstName" label="Tu nombre" required />
                 <Input name="lastName" type="text" id="lastName" label="Tu apellido" required />
@@ -89,8 +112,9 @@ const ContactPage: React.FC<PageProps> = () => {
                 <div />
                 <Button type="submit" hoverStyle="primary" label="Enviar mensaje" />
               </FormRow>
-            </form>
-          </FormWrapper>
+              <Input name="contact" type="hidden" />
+            </Form>
+          </div>
         </Wrapper>
       </Section>
       <StyledSectionWrapper>
