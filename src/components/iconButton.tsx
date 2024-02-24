@@ -51,13 +51,13 @@ const StyledButton = styled.button<{
         `;
       }
       return css`
-        color: var(--contrast);
+        color: var(--color-primary);
       `;
     }}
     ${({ type }) => {
       if (type === 'filled') {
         return css`
-          background: var(--contrast);
+          background: var(--color-primary);
         `;
       }
       return css`

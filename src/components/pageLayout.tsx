@@ -3,36 +3,34 @@ import styled from 'styled-components';
 import Layout from './layout';
 
 const HeroSection = styled.section`
-  height: 624px;
+  height: 300px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: url('/images/bg-page-sections.webp');
   position: relative;
   background-position: 0 -60px;
-
-  &::before {
-    content: '';
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    z-index: 0;
-    background: #222324;
-    opacity: 0.9;
-  }
+  border-bottom: 1px solid var(--border-primary);
 `;
 
 const Title = styled.h1`
-  font-family: Helvetica Now Text;
+  background: white;
+  color: var(--text-primary);
+  font-family: Poppins;
   font-weight: 900;
-  font-size: 62px;
-  color: white;
-  text-transform: uppercase;
+  font-size: 5rem;
   z-index: 2;
 
+  @media screen and (max-width: 1440px) {
+    padding: 0 36px;
+  }
+
   @media screen and (max-width: 425px) {
-    font-size: 2.5rem;
-    padding: 0 32px;
+    font-size: 3.2rem;
+    padding: 0 36px;
+  }
+
+  @media screen and (max-width: 375px) {
+    font-size: 2.3rem;
   }
 `;
 

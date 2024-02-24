@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components';
 
 const StyledButton = styled.button<{ $hoverStyle: 'primary' | 'secondary' }>`
   color: #fff;
-  background: var(--contrast);
+  background: var(--color-primary);
   border: 0;
   cursor: pointer;
   padding: 20px 40px;
@@ -38,7 +38,11 @@ type Props = {
 };
 
 const Button: React.FC<Props> = ({ label, type, hoverStyle = 'primary' }) => {
-  return <StyledButton type={type} $hoverStyle={hoverStyle}>{label}</StyledButton>;
+  return (
+    <StyledButton type={type} $hoverStyle={hoverStyle}>
+      {label}
+    </StyledButton>
+  );
 };
 
 export default Button;

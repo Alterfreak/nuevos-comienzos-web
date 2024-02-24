@@ -9,6 +9,7 @@ const Wrapper = styled.footer`
   align-items: center;
   justify-content: center;
   width: 100%;
+  background-color: var(--background-secondary);
 `;
 
 const Content = styled.div`
@@ -59,7 +60,7 @@ const SocialNetwork = styled.a`
   transition: background-color linear 0.3s;
 
   &:hover {
-    background-color: var(--contrast);
+    background-color: var(--color-primary);
   }
 `;
 
@@ -135,7 +136,6 @@ const Text = styled.span`
   font-size: 15px;
   color: #ffffff;
   font-family: 'Outfit';
-  color: #ffffff;
 
   a,
   a:visited {
@@ -143,7 +143,7 @@ const Text = styled.span`
     transition: color linear 0.3s;
 
     &:hover {
-      color: var(--contrast);
+      color: var(--color-primary);
     }
   }
 `;

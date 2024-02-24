@@ -15,17 +15,16 @@ const Wrapper = styled.nav`
   max-width: 1440px;
   width: 100%;
   justify-content: space-between;
-  padding: 0 32px;
 `;
 
 const LinksWrapper = styled.ul`
   display: flex;
   gap: 64px;
   list-style: none;
-  color: white;
+  color: var(--text-primary);
 
   a {
-    color: white;
+    color: var(--text-primary);
   }
   @media screen and (max-width: 1050px) {
     display: none;
@@ -74,7 +73,7 @@ const StyledLink = styled(Link)`
   transition: color linear 0.3s;
 
   &:hover {
-    color: var(--contrast);
+    color: var(--color-primary);
   }
 `;
 
@@ -113,13 +112,7 @@ const Navbar: React.FC = () => {
       {PortaledDrawer}
       <Wrapper>
         <Link to="/">
-          <StaticImage
-            src="../images/nuevos-comienzos-largo-blanco.webp"
-            alt="Logo iglesia del nazareno nuevos comienzos"
-            placeholder="blurred"
-            layout="fixed"
-            height={45}
-          />
+          <StaticImage src="../images/logo-black-dove.png" alt="Logo iglesia del nazareno nuevos comienzos" placeholder="blurred" layout="fixed" height={45} />
         </Link>
         <StyledButton onClick={() => setOpen(true)} iconName="menu" kind="secondary" />
         <LinksWrapper>

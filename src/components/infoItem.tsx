@@ -20,8 +20,8 @@ const Item = styled.div<{ $light: boolean; $clickable: boolean }>`
 `;
 
 const ItemTitle = styled.h3<{ $position: 'left' | 'right' }>`
-  font-family: Helvetica Now Text;
-  font-weight: 700;
+  font-family: Poppins;
+  font-weight: 900;
   font-size: 24px;
   margin-bottom: 16px;
   margin-top: 0;

@@ -11,10 +11,12 @@ import pageData from '../data/pageData';
 import SectionDescription from '../components/sectionDescription';
 import Button from '../components/button';
 
-const LogoWrapper = styled.form`
+const LogoWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 48px;
+  background: var(--background-main);
 
   & > div {
     max-width: 400px;
@@ -28,7 +30,6 @@ const LogoWrapper = styled.form`
 const Wrapper = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 64px;
   z-index: 10;
   position: relative;
 
@@ -37,12 +38,23 @@ const Wrapper = styled.div`
   }
 `;
 
+const TextWrapper = styled.div`
+  padding: 48px;
+  width: auto;
+`;
+
+const StyledSection = styled(Section)`
+  & > section {
+    width: auto;
+  }
+`;
+
 const AboutPage: React.FC<PageProps> = () => {
   return (
     <PageLayout title="Nuestros Ministerios">
-      <Section>
+      <StyledSection>
         <Wrapper>
-          <div>
+          <TextWrapper>
             <SectionTitle subtitle="JNI" title="Juventud Nazarena Internacional" />
             <SectionDescription>
               Trabajamos con un enfoque en liderazgo generacional, entrenando y discipulando a nuestros jóvenes. Siendo fieles a la palabra de Dios pero también
@@ -51,20 +63,20 @@ const AboutPage: React.FC<PageProps> = () => {
             </SectionDescription>
 
             <Button hoverStyle="primary" label="Involucrarme" />
-          </div>
+          </TextWrapper>
           <LogoWrapper>
             <StaticImage src="../images/jni-logo.webp" alt="Logo de JNI" placeholder="none" />
           </LogoWrapper>
         </Wrapper>
-      </Section>
-      <Section transparent>
+      </StyledSection>
+      <StyledSection transparent>
         <Wrapper>
           <LogoWrapper>
             <StaticImage src="../images/mnc-logo.webp" alt="Logo de MNC" placeholder="none" />
           </LogoWrapper>
-          <div>
-            <SectionTitle subtitle="MNC" title="Ministerio Nazareno de Compasión" light />
-            <SectionDescription $light>
+          <TextWrapper>
+            <SectionTitle subtitle="MNC" title="Ministerio Nazareno de Compasión" />
+            <SectionDescription>
               Siguiendo el ejemplo de nuestro Señor Jesús, buscamos impactar nuestra comunidad barranquillera a través de actos de compasión.
               <br />
               Apoyamos el comedor infantil de la Iglesia del Nazareno - Bienvenido a casa, pero también contamos con algunos proyectos de compasión con talleres
@@ -73,13 +85,13 @@ const AboutPage: React.FC<PageProps> = () => {
               ¡Te invitamos a que puedas hacer tu contribución a este ministerio!
             </SectionDescription>
 
-            <Button hoverStyle="secondary" label="¡Quiero ayudar!" />
-          </div>
+            <Button hoverStyle="primary" label="¡Quiero ayudar!" />
+          </TextWrapper>
         </Wrapper>
-      </Section>
-      <Section>
+      </StyledSection>
+      <StyledSection>
         <Wrapper>
-          <div>
+          <TextWrapper>
             <SectionTitle subtitle="MNI" title="Misiones Nazarenas Internacionales" />
             <SectionDescription>
               Uno de los valores esenciales de nuestra iglesia es que somos un pueblo misional. A través de este ministerio Nosotros fomentamos las misiones,
@@ -88,32 +100,32 @@ const AboutPage: React.FC<PageProps> = () => {
             </SectionDescription>
 
             <Button hoverStyle="primary" label="¡Quiero saber más!" />
-          </div>
+          </TextWrapper>
           <LogoWrapper>
             <StaticImage src="../images/mni-logo.webp" alt="Logo de MNI" placeholder="none" />
           </LogoWrapper>
         </Wrapper>
-      </Section>
-      <Section transparent>
+      </StyledSection>
+      <StyledSection transparent>
         <Wrapper>
           <LogoWrapper>
             <StaticImage src="../images/nazakids-logo.webp" alt="Logo de NazaKids" placeholder="none" />
           </LogoWrapper>
-          <div>
-            <SectionTitle subtitle="Niños" title="NazaKids" light />
-            <SectionDescription $light>
+          <TextWrapper>
+            <SectionTitle subtitle="Niños" title="NazaKids" />
+            <SectionDescription>
               Al igual que trabajamos discipulando y entrenando jóvenes, también no enfocamos en los niños para prepararlos para pasar a JNI. Nos enfocamos no
               solo en tener un tiempo divertido y cuidarlos, sino que también buscamos que ellos crezcan espiritualmente y en conocimiento de la palabra.
               <br />
             </SectionDescription>
 
-            <Button hoverStyle="secondary" label="¡Quiero saber más!" />
-          </div>
+            <Button hoverStyle="primary" label="¡Quiero saber más!" />
+          </TextWrapper>
         </Wrapper>
-      </Section>
-      <Section>
+      </StyledSection>
+      <StyledSection>
         <Wrapper>
-          <div>
+          <TextWrapper>
             <SectionTitle subtitle="DNI" title="Discipulado Nazareno Internacional" />
             <SectionDescription>
               A través de este ministerio proveemos plataformas de discipulado y educación teológica. Nos enfocamos en preparar no solo personas que sirvan a
@@ -122,12 +134,12 @@ const AboutPage: React.FC<PageProps> = () => {
             </SectionDescription>
 
             <Button hoverStyle="primary" label="¡Quiero aprender!" />
-          </div>
+          </TextWrapper>
           <LogoWrapper>
             <StaticImage src="../images/dni-logo.webp" alt="Logo de DNI" placeholder="none" />
           </LogoWrapper>
         </Wrapper>
-      </Section>
+      </StyledSection>
     </PageLayout>
   );
 };

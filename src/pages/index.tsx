@@ -5,7 +5,6 @@ import { StaticImage } from 'gatsby-plugin-image';
 
 import Layout from '../components/layout';
 import Section from '../components/section';
-import Button from '../components/button';
 import CustomHead from '../components/customHead';
 import pageData from '../data/pageData';
 import SectionGroups from '../pagesSections/index/sectionGroups';
@@ -64,7 +63,7 @@ const IndexPage: React.FC<PageProps> = () => {
               <br />
               Creamos un lugar seguro donde los jóvenes puedan crecer en su fe, hacer amigos y descubrir su propósito en la vida.
             </p>
-            <Button label="Más info..." />
+            {/* <Button label="Más info..." /> */}
           </Item>
 
           <Item>
@@ -73,7 +72,7 @@ const IndexPage: React.FC<PageProps> = () => {
               Debemos llevar el mensaje de Jesús a todo el mundo y enseñar a las personas sobre el amor de Dios. Por eso, a través de este ministerio para
               involucrar a nuestra comunidad en las misiones.
             </p>
-            <Button label="Más info..." />
+            {/* <Button label="Más info..." /> */}
           </Item>
 
           <Item>
@@ -83,7 +82,7 @@ const IndexPage: React.FC<PageProps> = () => {
               <br />
               Por eso brindamos apoyo, recursos y oportunidades de crecimiento para que los creyentes puedan profundizar en su vida espiritual.
             </p>
-            <Button label="Más info..." />
+            {/* <Button label="Más info..." /> */}
           </Item>
         </GridRow>
       </Section>

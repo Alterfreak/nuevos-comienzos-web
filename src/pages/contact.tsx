@@ -88,7 +88,7 @@ const ContactPage: React.FC<PageProps> = ({ location }) => {
                   await fetch(location.pathname, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                    // @ts-ignore
+                    // @ts-ignore mmm
                     body: new URLSearchParams(formData).toString(),
                   });
 

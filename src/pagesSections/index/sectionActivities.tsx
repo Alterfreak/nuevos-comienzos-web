@@ -21,7 +21,7 @@ const SliderItem = styled.div`
     object-position: center;
     border-radius: 16px;
     width: 450px;
-    height: 800px;
+    height: 450px;
   }
 
   @media screen and (max-width: 425px) {
@@ -42,6 +42,10 @@ const NextButton = styled(IconButton)`
   transform: translate(0, -50%);
   outline: 0;
 
+  &:hover {
+    background: var(--color-primary);
+  }
+
   @media screen and (max-width: 425px) {
     right: 10px;
   }
@@ -54,6 +58,10 @@ const PrevButton = styled(IconButton)`
   position: absolute;
   transform: translate(0, -50%);
   outline: 0;
+
+  &:hover {
+    background: var(--color-primary);
+  }
 
   @media screen and (max-width: 425px) {
     left: 10px;
@@ -77,6 +85,8 @@ const SectionActivities: React.FC = () => {
               slidesToShow: 1,
               slidesToScroll: 1,
               centerMode: false,
+              autoplay: true,
+              autoplaySpeed: 1,
             },
           },
         ]}

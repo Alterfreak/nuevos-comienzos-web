@@ -4,7 +4,6 @@ import { BiRadioCircleMarked } from 'react-icons/bi';
 
 import Section from '../../components/section';
 import SectionTitle from '../../components/sectionTitle';
-import Button from '../../components/button';
 import InfoItem from '../../components/infoItem';
 import SectionDescription from '../../components/sectionDescription';
 
@@ -58,12 +57,6 @@ const groups = [
     link: 'https://maps.app.goo.gl/44Mejoa7TyoamTHE9',
   },
   {
-    id: 'group2',
-    title: 'Ciudad Jardín',
-    description: 'Todos los JUEVES a las 7pm',
-    link: 'https://maps.app.goo.gl/44Mejoa7TyoamTHE9',
-  },
-  {
     id: 'group3',
     title: 'Kalamary',
     description: 'Todos los JUEVES a las 7pm',
@@ -91,7 +84,7 @@ const SectionGroups: React.FC = () => {
             Ven, únete y crece en tu fe mientras te conectas con otros creyentes.
           </SectionDescription>
 
-          <Button hoverStyle="secondary" label="Información" />
+          {/* <Button hoverStyle="secondary" label="Información" /> */}
         </div>
         <ItemList>
           {groups.map(g => (

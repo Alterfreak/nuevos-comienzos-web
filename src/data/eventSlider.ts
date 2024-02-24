@@ -1,27 +1,32 @@
 const events = [
   {
     id: 'miercoles',
-    image: '/images/ad-culto.webp',
+    image: '/images/activities/ad-grupos.png',
     description: 'placeholder',
   },
   {
     id: 'lunes',
-    image: '/images/ad-alborada.webp',
+    image: '/images/activities/ad-oracion.png',
     description: 'placeholder',
   },
   {
     id: 'martes',
-    image: '/images/ad-estudio-biblico.webp',
+    image: '/images/activities/ad-discipulado.png',
     description: 'placeholder',
   },
   {
     id: 'jueves',
-    image: '/images/ad-miercoles-oracion.webp',
+    image: '/images/activities/ad-milagros.png',
+    description: 'placeholder',
+  },
+  {
+    id: 'sabados',
+    image: '/images/activities/ad-jni.png',
     description: 'placeholder',
   },
   {
     id: 'viernes',
-    image: '/images/ad-jni.webp',
+    image: '/images/activities/ad-culto.png',
     description: 'placeholder',
   },
 ];

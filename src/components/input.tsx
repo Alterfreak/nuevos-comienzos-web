@@ -30,7 +30,7 @@ const StyledInput = styled.input`
 
   &:active,
   &:focus {
-    border-color: var(--contrast);
+    border-color: var(--color-primary);
   }
 `;
 

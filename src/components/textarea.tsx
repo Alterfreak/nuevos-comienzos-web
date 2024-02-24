@@ -30,7 +30,7 @@ const StyledInput = styled.textarea`
 
   &:active,
   &:focus {
-    border-color: var(--contrast);
+    border-color: var(--color-primary);
   }
 `;
 

@@ -22,7 +22,6 @@ const config: GatsbyConfig = {
         disable: true,
       },
     },
-    "gatsby-plugin-decap-cms",
     "gatsby-plugin-postcss",
     "gatsby-plugin-image",
     "gatsby-plugin-sitemap",

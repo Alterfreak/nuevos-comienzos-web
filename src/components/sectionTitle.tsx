@@ -33,7 +33,7 @@ const SubTitle = styled.span`
     display: block;
     position: absolute;
     height: 2px;
-    background-color: var(--contrast);
+    background-color: var(--color-primary);
     top: 8px;
     left: 0;
   }
@@ -44,19 +44,23 @@ const SubTitle = styled.span`
     display: block;
     position: absolute;
     height: 2px;
-    background-color: var(--contrast);
+    background-color: var(--color-primary);
     top: 8px;
     right: -15px;
   }
 `;
 
 const Title = styled.h3<{ $center?: boolean }>`
-  font-family: Helvetica Now Text;
-  font-weight: 700;
-  font-size: 42px;
+  font-family: Poppins;
+  font-size: 3.6rem;
+  font-weight: 900;
   line-height: 1.25;
   margin-bottom: 50px;
   margin-top: 0;
+
+  @media screen and (max-width: 600px) {
+    font-size: 3rem;
+  }
 
   ${({ $center }) =>
     $center &&

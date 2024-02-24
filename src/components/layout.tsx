@@ -13,13 +13,17 @@ const Header = styled.header`
   z-index: 2;
 `;
 
+const PageContent = styled.main`
+  padding-top: 112px;
+`;
+
 const Layout: React.FC<React.PropsWithChildren> = ({ children }) => {
   return (
     <>
       <Header>
         <Navbar />
       </Header>
-      <main>{children}</main>
+      <PageContent>{children}</PageContent>
       <Footer />
     </>
   );
