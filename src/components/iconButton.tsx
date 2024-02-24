@@ -35,7 +35,7 @@ const StyledButton = styled.button<{
   ${({ kind }) => {
     if (kind === 'secondary') {
       return css`
-        color: white;
+        color: var(--text-primary);
       `;
     }
     return css`

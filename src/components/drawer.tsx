@@ -5,6 +5,7 @@ import IconButton from './iconButton';
 const Wrapper = styled.div<{ side: 'left' | 'right' }>`
   position: fixed;
   padding: 24px;
+  padding-top: 55px;
   z-index: 100;
   height: 100%;
   width: 350px;
@@ -38,7 +39,7 @@ const Overlay = styled.div`
 
 const CloseButton = styled(IconButton)`
   position: absolute;
-  top: 28px;
+  top: 55px;
   right: 20px;
 `;
 

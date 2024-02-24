@@ -9,6 +9,7 @@ import events from '../../data/eventSlider';
 
 const StyledSlider = styled(Slider)`
   .slick-list {
+    height: 450px;
   }
 `;
 

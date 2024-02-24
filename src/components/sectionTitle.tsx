@@ -62,6 +62,14 @@ const Title = styled.h3<{ $center?: boolean }>`
     font-size: 3rem;
   }
 
+  @media screen and (max-width: 375px) {
+    font-size: 2.9rem;
+  }
+
+  @media screen and (max-width: 320px) {
+    font-size: 2.4rem;
+  }
+
   ${({ $center }) =>
     $center &&
     css`

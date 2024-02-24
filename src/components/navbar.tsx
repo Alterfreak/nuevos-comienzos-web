@@ -15,6 +15,11 @@ const Wrapper = styled.nav`
   max-width: 1440px;
   width: 100%;
   justify-content: space-between;
+
+
+  @media screen and (max-width: 1440px) {
+    padding: 0 36px;
+  }
 `;
 
 const LinksWrapper = styled.ul`

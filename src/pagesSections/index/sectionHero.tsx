@@ -32,6 +32,18 @@ const MainTitle = styled.h1`
   line-height: 1;
   color: var(--text-primary);
   margin: 0;
+
+  @media screen and (max-width: 425px) {
+    font-size: 3.9rem;
+  }
+
+  @media screen and (max-width: 375px) {
+    font-size: 2.9rem;
+  }
+
+  @media screen and (max-width: 320px) {
+    font-size: 2.4rem;
+  }
 `;
 
 const Subtitle = styled.h2`
@@ -46,6 +58,14 @@ const Subtitle = styled.h2`
   display: block;
   line-height: 1;
   color: var(--text-primary);
+
+  @media screen and (max-width: 375px) {
+    font-size: 1.5rem;
+  }
+
+  @media screen and (max-width: 320px) {
+    font-size: 1.1rem;
+  }
 `;
 
 const HeroSection = styled.section`
@@ -57,6 +77,10 @@ const HeroSection = styled.section`
   justify-content: center;
   background: white;
   border-bottom: 1px solid var(--border-primary);
+
+  @media screen and (max-width: 425px) {
+    height: 60vh;
+  }
 `;
 
 const SectionHero: React.FC = () => {
