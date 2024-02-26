@@ -10,6 +10,12 @@ const HeroSection = styled.section`
   position: relative;
   background-position: 0 -60px;
   border-bottom: 1px solid var(--border-primary);
+  padding-top: 110px;
+
+
+  @media screen and (max-width: 425px) {
+    padding-top: 80px;
+  }
 `;
 
 const Title = styled.h1`

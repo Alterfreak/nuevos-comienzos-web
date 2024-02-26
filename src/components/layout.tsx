@@ -14,7 +14,6 @@ const Header = styled.header`
 `;
 
 const PageContent = styled.main`
-  padding-top: 112px;
 `;
 
 const Layout: React.FC<React.PropsWithChildren> = ({ children }) => {
