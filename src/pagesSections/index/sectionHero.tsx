@@ -32,6 +32,7 @@ const MainTitle = styled.h1`
   line-height: 1;
   color: var(--text-primary);
   margin: 0;
+  margin-bottom: 16px;
 
   @media screen and (max-width: 425px) {
     font-size: 3.9rem;

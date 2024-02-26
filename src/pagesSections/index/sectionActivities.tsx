@@ -87,7 +87,6 @@ const SectionActivities: React.FC = () => {
               slidesToScroll: 1,
               centerMode: false,
               autoplay: true,
-              autoplaySpeed: 1,
             },
           },
         ]}
