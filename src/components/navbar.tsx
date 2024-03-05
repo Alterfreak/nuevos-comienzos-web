@@ -16,7 +16,6 @@ const Wrapper = styled.nav`
   width: 100%;
   justify-content: space-between;
 
-
   @media screen and (max-width: 1440px) {
     padding: 0 36px;
   }

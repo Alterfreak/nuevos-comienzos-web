@@ -13,8 +13,7 @@ const Header = styled.header`
   z-index: 2;
 `;
 
-const PageContent = styled.main`
-`;
+const PageContent = styled.main``;
 
 const Layout: React.FC<React.PropsWithChildren> = ({ children }) => {
   return (

@@ -14,11 +14,13 @@ const Wrapper = styled.div`
   @media screen and (max-width: 550px) {
     font-size: 3rem;
     padding: 0 16px;
+    padding-left: 32px;
   }
 
   @media screen and (max-width: 425px) {
     font-size: 3rem;
     padding: 0 16px;
+    padding-left: 32px;
   }
 
   @media screen and (max-width: 375px) {
@@ -116,20 +118,6 @@ const Aff = styled.div`
   }
 `;
 
-const SectionHero: React.FC = () => {
-  return (
-    <HeroSection>
-      <Wrapper>
-        <MainTitle>Bienvenido a un lugar de nuevos comienzos</MainTitle>
-        <Subtitle>Iglesia del Nazareno en Barranquilla</Subtitle>
-      </Wrapper>
-      <Aff>
-        <Carousel />
-      </Aff>
-    </HeroSection>
-  );
-};
-
 const Image = styled.img`
   width: 100%;
   height: 100vh;
@@ -146,11 +134,11 @@ const CarouselWrapper = styled.div`
 const images = ['/images/about/about-pic-1.jpeg', '/images/about/about-pic-2.jpeg', '/images/about/about-pic-3.jpeg'];
 
 const Carousel = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [, setCurrentIndex] = useState(0);
   const imageRefs = useRef<(HTMLImageElement | null)[]>([]);
   const intervalRef = useRef<NodeJS.Timeout>();
 
-  const nextImage = () => {
+  const triggerNextImage = () => {
     setCurrentIndex(prevIndex => {
       const nextIndex = (prevIndex + 1) % images.length;
       const currentImage = imageRefs.current[prevIndex];
@@ -167,7 +155,7 @@ const Carousel = () => {
 
   useEffect(() => {
     intervalRef.current = setInterval(() => {
-      nextImage();
+      triggerNextImage();
     }, 5000);
 
     return () => clearInterval(intervalRef.current);
@@ -179,11 +167,27 @@ const Carousel = () => {
         <Image
           key={image}
           src={image}
-          ref={el => (imageRefs.current[index] = el)}
+          ref={el => {
+            imageRefs.current[index] = el;
+          }}
           onLoad={() => index === 0 && gsap.to(imageRefs.current[0], { opacity: 1, duration: 0.5 })}
         />
       ))}
     </CarouselWrapper>
+  );
+};
+
+const SectionHero: React.FC = () => {
+  return (
+    <HeroSection>
+      <Wrapper>
+        <MainTitle>Bienvenido a un lugar de nuevos comienzos</MainTitle>
+        <Subtitle>Iglesia del Nazareno en Barranquilla</Subtitle>
+      </Wrapper>
+      <Aff>
+        <Carousel />
+      </Aff>
+    </HeroSection>
   );
 };
 

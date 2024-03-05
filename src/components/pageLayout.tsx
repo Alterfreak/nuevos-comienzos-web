@@ -12,7 +12,6 @@ const HeroSection = styled.section`
   border-bottom: 1px solid var(--border-primary);
   padding-top: 110px;
 
-
   @media screen and (max-width: 425px) {
     padding-top: 80px;
   }
@@ -30,9 +29,14 @@ const Title = styled.h1`
     padding: 0 36px;
   }
 
-  @media screen and (max-width: 425px) {
-    font-size: 3.2rem;
+  @media screen and (max-width: 768px) {
+    font-size: 3rem;
     padding: 0 36px;
+  }
+
+  @media screen and (max-width: 425px) {
+    font-size: 2.8rem;
+    padding: 0 24px;
   }
 
   @media screen and (max-width: 375px) {

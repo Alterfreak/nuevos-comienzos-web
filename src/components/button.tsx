@@ -35,11 +35,12 @@ type Props = {
   label: string;
   hoverStyle?: 'primary' | 'secondary';
   type?: HTMLButtonElement['type'];
+  className?: string;
 };
 
-const Button: React.FC<Props> = ({ label, type, hoverStyle = 'primary' }) => {
+const Button: React.FC<Props> = ({ label, type, hoverStyle = 'primary', className }) => {
   return (
-    <StyledButton type={type} $hoverStyle={hoverStyle}>
+    <StyledButton type={type} $hoverStyle={hoverStyle} className={className}>
       {label}
     </StyledButton>
   );
