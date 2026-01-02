@@ -1,3 +1,5 @@
+'use client';
+
 import * as React from 'react';
 import styled, { css } from 'styled-components';
 import { BiMenu, BiX, BiChevronRight, BiChevronLeft } from 'react-icons/bi';
@@ -76,7 +78,14 @@ type Props = {
   onClick: () => void;
 };
 
-const IconButton: React.FC<Props> = ({ iconName, className, onClick, kind = 'primary', hoverStyle = 'primary', type = 'default' }) => {
+const IconButton: React.FC<Props> = ({
+  iconName,
+  className,
+  onClick,
+  kind = 'primary',
+  hoverStyle = 'primary',
+  type = 'default',
+}) => {
   let Icon = null;
   switch (iconName) {
     case 'menu':

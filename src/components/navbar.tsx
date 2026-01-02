@@ -1,8 +1,10 @@
+'use client';
+
 import React, { useState } from 'react';
 import { createPortal } from 'react-dom';
 
-import { Link } from 'gatsby';
-import { StaticImage } from 'gatsby-plugin-image';
+import Image from 'next/image';
+import Link from 'next/link';
 import styled from 'styled-components';
 import IconButton from './iconButton';
 import Drawer from './drawer';
@@ -85,25 +87,24 @@ const Navbar: React.FC = () => {
   const [open, setOpen] = useState(false);
   const MenuDrawer = (
     <Drawer side="right" open={open} onClose={() => setOpen(false)}>
-      <StaticImage
-        src="../images/nuevos-comienzos-largo-oscuro.webp"
+      <Image
+        src="/images/nuevos-comienzos-largo-oscuro.webp"
         alt="Logo iglesia del nazareno nuevos comienzos"
-        placeholder="blurred"
-        layout="fixed"
+        width={202}
         height={45}
       />
       <LinksWrapperVertical>
         <li>
-          <StyledLink to="/ministries">Ministerios</StyledLink>
+          <StyledLink href="/ministries">Ministerios</StyledLink>
         </li>
         <li>
-          <StyledLink to="/articles">Artículos de Fe</StyledLink>
+          <StyledLink href="/articles">Artículos de Fe</StyledLink>
         </li>
         <li>
-          <StyledLink to="/about">Nosotros</StyledLink>
+          <StyledLink href="/about">Nosotros</StyledLink>
         </li>
         <li>
-          <StyledLink to="/contact">Contáctanos</StyledLink>
+          <StyledLink href="/contact">Contáctanos</StyledLink>
         </li>
       </LinksWrapperVertical>
     </Drawer>
@@ -115,22 +116,27 @@ const Navbar: React.FC = () => {
     <>
       {PortaledDrawer}
       <Wrapper>
-        <Link to="/">
-          <StaticImage src="../images/logo-black-dove.png" alt="Logo iglesia del nazareno nuevos comienzos" placeholder="blurred" layout="fixed" height={45} />
+        <Link href="/">
+          <Image
+            src="/images/logo-black-dove.png"
+            alt="Logo iglesia del nazareno nuevos comienzos"
+            width={53}
+            height={45}
+          />
         </Link>
         <StyledButton onClick={() => setOpen(true)} iconName="menu" kind="secondary" />
         <LinksWrapper>
           <li>
-            <StyledLink to="/ministries">Ministerios</StyledLink>
+            <StyledLink href="/ministries">Ministerios</StyledLink>
           </li>
           <li>
-            <StyledLink to="/articles">Artículos de Fe</StyledLink>
+            <StyledLink href="/articles">Artículos de Fe</StyledLink>
           </li>
           <li>
-            <StyledLink to="/about">Nosotros</StyledLink>
+            <StyledLink href="/about">Nosotros</StyledLink>
           </li>
           <li>
-            <StyledLink to="/contact">Contáctanos</StyledLink>
+            <StyledLink href="/contact">Contáctanos</StyledLink>
           </li>
         </LinksWrapper>
       </Wrapper>

@@ -1,3 +1,5 @@
+'use client';
+
 import * as React from 'react';
 import styled, { css } from 'styled-components';
 
@@ -52,7 +54,15 @@ type Props = {
 const Radio: React.FC<Props> = ({ label, required, name, id, checked, value, onClick }) => {
   return (
     <Wrapper onClick={onClick}>
-      <StyledInput onChange={() => {}} type="radio" name={name} id={id} required={required} value={value} checked={checked} />
+      <StyledInput
+        onChange={() => {}}
+        type="radio"
+        name={name}
+        id={id}
+        required={required}
+        value={value}
+        checked={checked}
+      />
       {label && <Label htmlFor={id}>{label}</Label>}
     </Wrapper>
   );
@@ -96,7 +106,15 @@ type RadioGroupProps = {
   onChange: (option: Option) => void;
 };
 
-export const RadioGroup: React.FC<RadioGroupProps> = ({ options, required, selected, layout, name, label, onChange }) => {
+export const RadioGroup: React.FC<RadioGroupProps> = ({
+  options,
+  required,
+  selected,
+  layout,
+  name,
+  label,
+  onChange,
+}) => {
   return (
     <RadioGroupWrapper>
       {label && (

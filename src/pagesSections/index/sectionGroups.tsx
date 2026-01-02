@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import styled from 'styled-components';
 import { BiRadioCircleMarked } from 'react-icons/bi';
@@ -78,8 +80,8 @@ const SectionGroups: React.FC = () => {
           <SectionTitle subtitle="visitános en" title="Grupos de conexión" light />
 
           <SectionDescription $light>
-            Nos reunimos semanalmente en diferentes horarios, días y puntos de la ciudad para compartir la palabra de Dios y tener conversaciones
-            significativas.
+            Nos reunimos semanalmente en diferentes horarios, días y puntos de la ciudad para compartir la palabra de
+            Dios y tener conversaciones significativas.
             <br />
             Ven, únete y crece en tu fe mientras te conectas con otros creyentes.
           </SectionDescription>
@@ -88,7 +90,14 @@ const SectionGroups: React.FC = () => {
         </div>
         <ItemList>
           {groups.map(g => (
-            <InfoItem onClick={() => {}} light title={g.title} description={g.description} key={g.id} Icon={<BiRadioCircleMarked size={80} />} />
+            <InfoItem
+              onClick={() => {}}
+              light
+              title={g.title}
+              description={g.description}
+              key={g.id}
+              Icon={<BiRadioCircleMarked size={80} />}
+            />
           ))}
         </ItemList>
       </Wrapper>

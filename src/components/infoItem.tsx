@@ -1,3 +1,5 @@
+'use client';
+
 import * as React from 'react';
 import styled, { css } from 'styled-components';
 
@@ -67,7 +69,16 @@ type Props = {
   onClick?: () => void;
 };
 
-const InfoItem: React.FC<Props> = ({ title, onClick, alignment = 'left', description, className, light = false, Icon, iconPosition = 'left' }) => {
+const InfoItem: React.FC<Props> = ({
+  title,
+  onClick,
+  alignment = 'left',
+  description,
+  className,
+  light = false,
+  Icon,
+  iconPosition = 'left',
+}) => {
   return (
     <Item $clickable={!!onClick} onClick={onClick} $light={light} className={className}>
       {iconPosition === 'left' && Icon}

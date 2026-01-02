@@ -1,3 +1,6 @@
+'use client';
+
+import Image from 'next/image';
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import Slider from 'react-slick';
@@ -123,7 +126,7 @@ const SectionActivities: React.FC = () => {
       >
         {events.map(e => (
           <SliderItem key={e.id}>
-            <img src={e.image} alt={e.description} />
+            <Image src={e.image} alt={e.description} width={450} height={450} sizes="(max-width: 425px) 100vw, 450px" />
           </SliderItem>
         ))}
       </StyledSlider>

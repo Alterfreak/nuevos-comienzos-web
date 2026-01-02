@@ -1,4 +1,7 @@
+'use client';
+
 import gsap from 'gsap';
+import Image from 'next/image';
 import React, { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 
@@ -118,24 +121,24 @@ const Aff = styled.div`
   }
 `;
 
-const Image = styled.img`
-  width: 100%;
-  height: 100vh;
-  object-fit: cover;
+const ImageLayer = styled.div`
   position: absolute;
+  inset: 0;
   opacity: 0;
   filter: grayscale(1);
 `;
 
 const CarouselWrapper = styled.div`
   position: relative;
+  width: 100%;
+  height: 100%;
 `;
 
 const images = ['/images/about/about-pic-1.jpeg', '/images/about/about-pic-2.jpeg', '/images/about/about-pic-3.jpeg'];
 
 const Carousel = () => {
   const [, setCurrentIndex] = useState(0);
-  const imageRefs = useRef<(HTMLImageElement | null)[]>([]);
+  const imageRefs = useRef<(HTMLDivElement | null)[]>([]);
   const intervalRef = useRef<NodeJS.Timeout>();
 
   const triggerNextImage = () => {
@@ -164,14 +167,26 @@ const Carousel = () => {
   return (
     <CarouselWrapper>
       {images.map((image, index) => (
-        <Image
+        <ImageLayer
           key={image}
-          src={image}
           ref={el => {
             imageRefs.current[index] = el;
           }}
-          onLoad={() => index === 0 && gsap.to(imageRefs.current[0], { opacity: 1, duration: 0.5 })}
-        />
+        >
+          <Image
+            src={image}
+            alt={`Slide ${index + 1}`}
+            fill
+            sizes="100vw"
+            priority={index === 0}
+            style={{ objectFit: 'cover' }}
+            onLoadingComplete={() => {
+              if (index === 0 && imageRefs.current[0]) {
+                gsap.to(imageRefs.current[0], { opacity: 1, duration: 0.5 });
+              }
+            }}
+          />
+        </ImageLayer>
       ))}
     </CarouselWrapper>
   );

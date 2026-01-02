@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import styled, { css } from 'styled-components';
 
@@ -43,7 +45,12 @@ type Props = {
   className?: string;
 };
 
-const Section: React.FC<React.PropsWithChildren<Props>> = ({ children, className, fullWidth = false, transparent = false }) => {
+const Section: React.FC<React.PropsWithChildren<Props>> = ({
+  children,
+  className,
+  fullWidth = false,
+  transparent = false,
+}) => {
   if (fullWidth) {
     return (
       <SectionWrapper $transparent={transparent} $fullWidth className={className}>

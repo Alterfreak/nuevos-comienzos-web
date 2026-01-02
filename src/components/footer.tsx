@@ -1,5 +1,7 @@
+'use client';
+
 import * as React from 'react';
-import { StaticImage } from 'gatsby-plugin-image';
+import Image from 'next/image';
 import styled from 'styled-components';
 import { BiLogoFacebook, BiLogoInstagram, BiLogoWhatsapp, BiMap } from 'react-icons/bi';
 import Button from './button';
@@ -163,17 +165,17 @@ const Footer: React.FC = () => {
         <ImagesWrapper>
           <LogosWrapper>
             <a href="#home">
-              <StaticImage src="../images/ancho-blanco-norte.webp" alt="A description" placeholder="blurred" layout="fixed" height={95} />
+              <Image src="/images/ancho-blanco-norte.webp" alt="Logo ancho blanco norte" width={173} height={95} />
             </a>
             <a href="#home">
-              <StaticImage src="../images/nuevos-comienzos-blanco.webp" alt="A description" placeholder="blurred" layout="fixed" height={95} />
+              <Image src="/images/nuevos-comienzos-blanco.webp" alt="Logo nuevos comienzos" width={189} height={95} />
             </a>
           </LogosWrapper>
           <SocialNetworks>
-            <SocialNetwork target="_blank" href="https://www.facebook.com/nazbaqnorte">
+            <SocialNetwork target="_blank" rel="noreferrer" href="https://www.facebook.com/nazbaqnorte">
               <BiLogoFacebook color="white" />
             </SocialNetwork>
-            <SocialNetwork target="_blank" href="https://instagram.com/nazbaqnorte">
+            <SocialNetwork target="_blank" rel="noreferrer" href="https://instagram.com/nazbaqnorte">
               <BiLogoInstagram color="white" />
             </SocialNetwork>
           </SocialNetworks>
@@ -225,7 +227,11 @@ const Footer: React.FC = () => {
                 <a href="/ministries">Ministerios</a>
               </li>
               <li>
-                <a target="_blank" href="https://nazarene.org/es/quienes-somos/organizaci%C3%B3n/ministerios/juventud-nazarena-internacional" rel="noreferrer">
+                <a
+                  target="_blank"
+                  href="https://nazarene.org/es/quienes-somos/organizaci%C3%B3n/ministerios/juventud-nazarena-internacional"
+                  rel="noreferrer"
+                >
                   Juventud Nazarena Internacional
                 </a>
               </li>
@@ -239,7 +245,11 @@ const Footer: React.FC = () => {
                 </a>
               </li>
               <li>
-                <a target="_blank" href="https://nazarene.org/es/quienes-somos/organization/ministries/sdmi" rel="noreferrer">
+                <a
+                  target="_blank"
+                  href="https://nazarene.org/es/quienes-somos/organization/ministries/sdmi"
+                  rel="noreferrer"
+                >
                   Discipulado Nazareno Internacional{' '}
                 </a>
               </li>
