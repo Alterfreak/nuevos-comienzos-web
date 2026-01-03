@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import Slider from 'react-slick';
 
@@ -16,9 +16,10 @@ const StyledSlider = styled(Slider as React.ComponentClass<any>)`
   }
 `;
 
-const SliderItem = styled.div`
+const SliderItem = styled.figure`
   margin: 0 10px;
   box-sizing: border-box;
+  position: relative;
 
   img {
     object-fit: cover;
@@ -35,6 +36,30 @@ const SliderItem = styled.div`
     img {
       max-width: 100vw;
     }
+  }
+`;
+
+const Caption = styled.figcaption`
+  position: absolute;
+  left: 16px;
+  right: 16px;
+  bottom: 16px;
+  background: rgba(0, 0, 0, 0.55);
+  color: #ffffff;
+  padding: 12px 16px;
+  border-radius: 12px;
+  font-family: 'Outfit';
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 22px;
+  backdrop-filter: blur(6px);
+
+  span {
+    display: block;
+    font-weight: 400;
+    font-size: 14px;
+    margin-top: 4px;
+    opacity: 0.85;
   }
 `;
 
@@ -72,16 +97,40 @@ const PrevButton = styled(IconButton)`
   }
 `;
 
-const SectionActivities: React.FC = () => {
-  const [currentSlide, setCurrentSlide] = useState(1);
+type ArrowProps = {
+  onClick?: () => void;
+};
 
+const PrevArrow: React.FC<ArrowProps> = ({ onClick }) => (
+  <PrevButton
+    iconName="chevron-left"
+    type="filled"
+    hoverStyle="secondary"
+    ariaLabel="Anterior"
+    onClick={onClick ?? (() => {})}
+  />
+);
+
+const NextArrow: React.FC<ArrowProps> = ({ onClick }) => (
+  <NextButton
+    iconName="chevron-right"
+    type="filled"
+    hoverStyle="secondary"
+    ariaLabel="Siguiente"
+    onClick={onClick ?? (() => {})}
+  />
+);
+
+const SectionActivities: React.FC = () => {
   return (
     <Section fullWidth>
       <SectionTitle center subtitle="te invitamos" title="Eventos y Actividades" />
       <StyledSlider
         dots={false}
         infinite
-        autoplay={false}
+        autoplay
+        autoplaySpeed={5000}
+        pauseOnHover
         responsive={[
           {
             breakpoint: 425,
@@ -89,44 +138,23 @@ const SectionActivities: React.FC = () => {
               slidesToShow: 1,
               slidesToScroll: 1,
               centerMode: false,
-              autoplay: true,
             },
           },
         ]}
         speed={300}
-        prevArrow={
-          <PrevButton
-            iconName="chevron-left"
-            type="filled"
-            hoverStyle="secondary"
-            onClick={() =>
-              setCurrentSlide(prev => {
-                if (prev - 1 === 0) return 6;
-                return prev - 1;
-              })
-            }
-          />
-        }
-        nextArrow={
-          <NextButton
-            iconName="chevron-right"
-            type="filled"
-            hoverStyle="secondary"
-            onClick={() =>
-              setCurrentSlide(prev => {
-                if (prev + 1 === 7) return 1;
-                return prev + 1;
-              })
-            }
-          />
-        }
-        slidesToShow={currentSlide}
+        prevArrow={<PrevArrow />}
+        nextArrow={<NextArrow />}
+        slidesToShow={3}
         centerMode
         variableWidth
       >
         {events.map(e => (
           <SliderItem key={e.id}>
-            <Image src={e.image} alt={e.description} width={450} height={450} sizes="(max-width: 425px) 100vw, 450px" />
+            <Image src={e.image} alt={e.title} width={450} height={450} sizes="(max-width: 425px) 100vw, 450px" />
+            <Caption>
+              {e.title}
+              <span>{e.description}</span>
+            </Caption>
           </SliderItem>
         ))}
       </StyledSlider>

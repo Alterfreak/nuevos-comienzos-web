@@ -7,6 +7,7 @@ const Item = styled.div<{ $light: boolean; $clickable: boolean }>`
   display: flex;
   gap: 24px;
   color: black;
+  text-decoration: none;
 
   ${({ $clickable }) =>
     $clickable &&
@@ -19,6 +20,11 @@ const Item = styled.div<{ $light: boolean; $clickable: boolean }>`
     css`
       color: #e1e1e1;
     `}
+
+  &:focus-visible {
+    outline: 3px solid rgba(126, 217, 87, 0.6);
+    outline-offset: 3px;
+  }
 `;
 
 const ItemTitle = styled.h3<{ $position: 'left' | 'right' }>`
@@ -67,6 +73,10 @@ type Props = {
   iconPosition?: 'left' | 'right';
   alignment?: 'left' | 'right';
   onClick?: () => void;
+  href?: string;
+  target?: React.HTMLAttributeAnchorTarget;
+  rel?: string;
+  ariaLabel?: string;
 };
 
 const InfoItem: React.FC<Props> = ({
@@ -78,9 +88,24 @@ const InfoItem: React.FC<Props> = ({
   light = false,
   Icon,
   iconPosition = 'left',
+  href,
+  target,
+  rel,
+  ariaLabel,
 }) => {
+  const clickable = !!onClick || !!href;
   return (
-    <Item $clickable={!!onClick} onClick={onClick} $light={light} className={className}>
+    <Item
+      as={href ? 'a' : 'div'}
+      href={href}
+      target={target}
+      rel={rel}
+      aria-label={ariaLabel}
+      $clickable={clickable}
+      onClick={onClick}
+      $light={light}
+      className={className}
+    >
       {iconPosition === 'left' && Icon}
       <TextWrapper $position={alignment}>
         <ItemTitle $position={alignment}>{title}</ItemTitle>

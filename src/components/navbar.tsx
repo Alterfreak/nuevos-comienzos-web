@@ -5,9 +5,11 @@ import { createPortal } from 'react-dom';
 
 import Image from 'next/image';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import styled from 'styled-components';
 import IconButton from './iconButton';
 import Drawer from './drawer';
+import Button from './button';
 
 const Wrapper = styled.nav`
   height: 72px;
@@ -64,6 +66,21 @@ const LinksWrapperVertical = styled.ul`
   }
 `;
 
+const NavActions = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  @media screen and (max-width: 1050px) {
+    display: none;
+  }
+`;
+
+const DrawerActions = styled.div`
+  display: grid;
+  gap: 12px;
+`;
+
 const StyledButton = styled(IconButton)`
   display: none;
 
@@ -72,21 +89,47 @@ const StyledButton = styled(IconButton)`
   }
 `;
 
-const StyledLink = styled(Link)`
+const StyledLink = styled(Link)<{ $active?: boolean }>`
   font-size: 16px;
   font-family: 'Outfit';
   font-weight: 600;
   transition: color linear 0.3s;
+  position: relative;
+  color: ${({ $active }) => ($active ? 'var(--color-primary)' : 'var(--text-primary)')};
 
   &:hover {
     color: var(--color-primary);
   }
+
+  ${({ $active }) =>
+    $active &&
+    `
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -8px;
+      width: 100%;
+      height: 2px;
+      background: var(--color-primary);
+    }
+  `}
 `;
+
+const navLinks = [
+  { href: '/ministries', label: 'Ministerios' },
+  { href: '/articles', label: 'Artículos de Fe' },
+  { href: '/mission', label: 'Misión' },
+  { href: '/about', label: 'Nosotros' },
+  { href: '/contact', label: 'Contáctanos' },
+];
 
 const Navbar: React.FC = () => {
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
+  const isActive = (href: string) => (href === '/' ? pathname === '/' : pathname?.startsWith(href));
   const MenuDrawer = (
-    <Drawer side="right" open={open} onClose={() => setOpen(false)}>
+    <Drawer side="right" open={open} onClose={() => setOpen(false)} ariaLabel="Menú de navegación">
       <Image
         src="/images/nuevos-comienzos-largo-oscuro.webp"
         alt="Logo iglesia del nazareno nuevos comienzos"
@@ -94,19 +137,18 @@ const Navbar: React.FC = () => {
         height={45}
       />
       <LinksWrapperVertical>
-        <li>
-          <StyledLink href="/ministries">Ministerios</StyledLink>
-        </li>
-        <li>
-          <StyledLink href="/articles">Artículos de Fe</StyledLink>
-        </li>
-        <li>
-          <StyledLink href="/about">Nosotros</StyledLink>
-        </li>
-        <li>
-          <StyledLink href="/contact">Contáctanos</StyledLink>
-        </li>
+        {navLinks.map(link => (
+          <li key={link.href}>
+            <StyledLink href={link.href} onClick={() => setOpen(false)} $active={isActive(link.href)}>
+              {link.label}
+            </StyledLink>
+          </li>
+        ))}
       </LinksWrapperVertical>
+      <DrawerActions>
+        <Button href="/contact#map" hoverStyle="secondary" label="Visítanos" />
+        <Button href="/contact#contact-form" hoverStyle="primary" label="Escríbenos" />
+      </DrawerActions>
     </Drawer>
   );
 
@@ -115,8 +157,8 @@ const Navbar: React.FC = () => {
   return (
     <>
       {PortaledDrawer}
-      <Wrapper>
-        <Link href="/">
+      <Wrapper aria-label="Navegación principal">
+        <Link href="/" aria-label="Ir al inicio">
           <Image
             src="/images/logo-black-dove.png"
             alt="Logo iglesia del nazareno nuevos comienzos"
@@ -124,21 +166,23 @@ const Navbar: React.FC = () => {
             height={45}
           />
         </Link>
-        <StyledButton onClick={() => setOpen(true)} iconName="menu" kind="secondary" />
+        <StyledButton onClick={() => setOpen(true)} iconName="menu" kind="secondary" ariaLabel="Abrir menú" />
         <LinksWrapper>
-          <li>
-            <StyledLink href="/ministries">Ministerios</StyledLink>
-          </li>
-          <li>
-            <StyledLink href="/articles">Artículos de Fe</StyledLink>
-          </li>
-          <li>
-            <StyledLink href="/about">Nosotros</StyledLink>
-          </li>
-          <li>
-            <StyledLink href="/contact">Contáctanos</StyledLink>
-          </li>
+          {navLinks.map(link => (
+            <li key={link.href}>
+              <StyledLink
+                href={link.href}
+                $active={isActive(link.href)}
+                aria-current={isActive(link.href) ? 'page' : undefined}
+              >
+                {link.label}
+              </StyledLink>
+            </li>
+          ))}
         </LinksWrapper>
+        <NavActions>
+          <Button href="/contact#map" hoverStyle="secondary" label="Visítanos" />
+        </NavActions>
       </Wrapper>
     </>
   );

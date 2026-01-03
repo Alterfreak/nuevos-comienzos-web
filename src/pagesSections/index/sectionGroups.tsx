@@ -91,7 +91,10 @@ const SectionGroups: React.FC = () => {
         <ItemList>
           {groups.map(g => (
             <InfoItem
-              onClick={() => {}}
+              href={g.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              ariaLabel={`Abrir ubicación de ${g.title} en Google Maps`}
               light
               title={g.title}
               description={g.description}

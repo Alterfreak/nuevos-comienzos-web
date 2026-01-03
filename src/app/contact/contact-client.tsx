@@ -75,6 +75,7 @@ const ContactClient: React.FC = () => {
           </div>
           <div>
             <Form
+              id="contact-form"
               ref={formRef}
               name="contact"
               method="POST"

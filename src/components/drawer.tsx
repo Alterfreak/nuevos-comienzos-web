@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled, { css } from 'styled-components';
 import IconButton from './iconButton';
 
@@ -49,17 +49,35 @@ type Props = {
   side: 'left' | 'right';
   open: boolean;
   onClose: () => void;
+  ariaLabel?: string;
 };
 
-const Drawer: React.FC<React.PropsWithChildren<Props>> = ({ children, side, open, onClose }) => {
-  if (!open) return false;
+const Drawer: React.FC<React.PropsWithChildren<Props>> = ({ children, side, open, onClose, ariaLabel }) => {
+  useEffect(() => {
+    if (!open) return undefined;
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        onClose();
+      }
+    };
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    document.addEventListener('keydown', handleKeyDown);
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      document.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [open, onClose]);
+
+  if (!open) return null;
 
   return (
     <>
-      <Overlay onClick={onClose} />
-      <Wrapper side={side}>
+      <Overlay onClick={onClose} aria-hidden="true" />
+      <Wrapper side={side} role="dialog" aria-modal="true" aria-label={ariaLabel ?? 'Menú'}>
         {children}
-        <CloseButton iconName="close" onClick={onClose} />
+        <CloseButton iconName="close" onClick={onClose} ariaLabel="Cerrar menú" />
       </Wrapper>
     </>
   );

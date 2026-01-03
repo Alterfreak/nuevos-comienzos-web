@@ -24,6 +24,16 @@ const pageData = {
     description:
       'Encuentra donde estamos ubicados, número de teléfono y un formulario de contacto para enviarnos mensajes. Contáctanos para obtener más información, hacer preguntas o conectarte con nuestra iglesia.',
   },
+  mission: {
+    title: 'Misión y valores - Nuevos Comienzos',
+    description:
+      'Conoce la misión y los valores que guían a la Iglesia del Nazareno Nuevos Comienzos en Barranquilla. Descubre nuestro propósito y cómo vivimos nuestra fe.',
+  },
+  eventSanidad: {
+    title: 'Taller de Sanidad en las Emociones - Nuevos Comienzos',
+    description:
+      'Inscríbete al Taller de Sanidad en las Emociones. Un espacio gratuito para crecer, sanar y encontrar apoyo en comunidad.',
+  },
 };
 
 export default pageData;

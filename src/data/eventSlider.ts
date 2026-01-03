@@ -2,32 +2,38 @@ const events = [
   {
     id: 'miercoles',
     image: '/images/activities/ad-grupos.png',
-    description: 'placeholder',
+    title: 'Grupos de conexión',
+    description: 'Conéctate con una comunidad cercana y crece en tu fe.',
   },
   {
     id: 'lunes',
     image: '/images/activities/ad-oracion.png',
-    description: 'placeholder',
+    title: 'Noche de oración',
+    description: 'Un tiempo para orar y acompañarnos como iglesia.',
   },
   {
     id: 'martes',
     image: '/images/activities/ad-discipulado.png',
-    description: 'placeholder',
+    title: 'Discipulado',
+    description: 'Aprendemos juntos la Palabra y crecemos en comunidad.',
   },
   {
     id: 'jueves',
     image: '/images/activities/ad-milagros.png',
-    description: 'placeholder',
+    title: 'Culto de milagros',
+    description: 'Espacio para adoración y oración por sanidad.',
   },
   {
     id: 'sabados',
     image: '/images/activities/ad-jni.png',
-    description: 'placeholder',
+    title: 'Reunión JNI',
+    description: 'Jóvenes creciendo en fe, amistad y propósito.',
   },
   {
     id: 'viernes',
     image: '/images/activities/ad-culto.png',
-    description: 'placeholder',
+    title: 'Culto general',
+    description: 'Alabanza, enseñanza y comunidad para toda la familia.',
   },
 ];
 

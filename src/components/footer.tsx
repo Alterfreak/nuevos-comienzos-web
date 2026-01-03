@@ -5,6 +5,8 @@ import Image from 'next/image';
 import styled from 'styled-components';
 import { BiLogoFacebook, BiLogoInstagram, BiLogoWhatsapp, BiMap } from 'react-icons/bi';
 import Button from './button';
+import siteData, { whatsappUrl } from '../data/siteData';
+import Link from 'next/link';
 
 const Wrapper = styled.footer`
   display: flex;
@@ -164,18 +166,28 @@ const Footer: React.FC = () => {
       <Content>
         <ImagesWrapper>
           <LogosWrapper>
-            <a href="#home">
+            <Link href="/#home">
               <Image src="/images/ancho-blanco-norte.webp" alt="Logo ancho blanco norte" width={173} height={95} />
-            </a>
-            <a href="#home">
+            </Link>
+            <Link href="/#home">
               <Image src="/images/nuevos-comienzos-blanco.webp" alt="Logo nuevos comienzos" width={189} height={95} />
-            </a>
+            </Link>
           </LogosWrapper>
           <SocialNetworks>
-            <SocialNetwork target="_blank" rel="noreferrer" href="https://www.facebook.com/nazbaqnorte">
+            <SocialNetwork
+              aria-label="Facebook"
+              target="_blank"
+              rel="noopener noreferrer"
+              href={siteData.social.facebook}
+            >
               <BiLogoFacebook color="white" />
             </SocialNetwork>
-            <SocialNetwork target="_blank" rel="noreferrer" href="https://instagram.com/nazbaqnorte">
+            <SocialNetwork
+              aria-label="Instagram"
+              target="_blank"
+              rel="noopener noreferrer"
+              href={siteData.social.instagram}
+            >
               <BiLogoInstagram color="white" />
             </SocialNetwork>
           </SocialNetworks>
@@ -186,20 +198,18 @@ const Footer: React.FC = () => {
             <h3>Iglesia del Nazareno</h3>
             <ul>
               <li>
-                <a href="/articles">Artículos de Fe</a>
+                <Link href="/articles">Artículos de Fe</Link>
               </li>
               <li>
-                <a target="_blank" href="https://nazarene.org/" rel="noreferrer">
+                <a target="_blank" href="https://nazarene.org/" rel="noopener noreferrer">
                   Iglesia Global
                 </a>
               </li>
               <li>
-                <a target="_blank" href="https://nazarene.org/index.php/es/misi%C3%B3n" rel="noreferrer">
-                  Misión
-                </a>
+                <Link href="/mission">Misión</Link>
               </li>
               <li>
-                <a href="#home">Valores Nazarenos</a>
+                <Link href="/mission">Valores Nazarenos</Link>
               </li>
             </ul>
           </LinksColumn>
@@ -207,16 +217,16 @@ const Footer: React.FC = () => {
             <h3>Nosotros</h3>
             <ul>
               <li>
-                <a href="/about">¿Quiénes somos?</a>
+                <Link href="/about">¿Quiénes somos?</Link>
               </li>
               <li>
-                <a href="/contact#map">¿Dónde estamos?</a>
+                <Link href="/contact#map">¿Dónde estamos?</Link>
               </li>
               <li>
-                <a href="#home">Oportunidades de servicio</a>
+                <Link href="/ministries">Oportunidades de servicio</Link>
               </li>
               <li>
-                <a href="#home">Ofrendas</a>
+                <Link href="/contact">Ofrendas</Link>
               </li>
             </ul>
           </LinksColumn>
@@ -224,13 +234,13 @@ const Footer: React.FC = () => {
             <h3>Links</h3>
             <ul>
               <li>
-                <a href="/ministries">Ministerios</a>
+                <Link href="/ministries">Ministerios</Link>
               </li>
               <li>
                 <a
                   target="_blank"
                   href="https://nazarene.org/es/quienes-somos/organizaci%C3%B3n/ministerios/juventud-nazarena-internacional"
-                  rel="noreferrer"
+                  rel="noopener noreferrer"
                 >
                   Juventud Nazarena Internacional
                 </a>
@@ -239,7 +249,7 @@ const Footer: React.FC = () => {
                 <a
                   target="_blank"
                   href="https://nazarene.org/es/quienes-somos/organizaci%C3%B3n/ministerios/misiones-nazarenas-internacionales"
-                  rel="noreferrer"
+                  rel="noopener noreferrer"
                 >
                   Misiones Nazarenas Internacionales
                 </a>
@@ -248,7 +258,7 @@ const Footer: React.FC = () => {
                 <a
                   target="_blank"
                   href="https://nazarene.org/es/quienes-somos/organization/ministries/sdmi"
-                  rel="noreferrer"
+                  rel="noopener noreferrer"
                 >
                   Discipulado Nazareno Internacional{' '}
                 </a>
@@ -261,24 +271,20 @@ const Footer: React.FC = () => {
               <ContactItem>
                 <BiMap color="white" size={22} />
                 <Text>
-                  <a target="_blank" href="https://maps.app.goo.gl/QJ5H4mhPW2CcGBm19" rel="noreferrer">
-                    Cl. 80#41d-09, Ciudad Jardín, Barranquilla
+                  <a target="_blank" href={siteData.mapsUrl} rel="noopener noreferrer">
+                    {siteData.address.streetAddress}, {siteData.address.addressLocality}
                   </a>
                 </Text>
               </ContactItem>
               <ContactItem>
                 <BiLogoWhatsapp color="white" size={22} />
                 <Text>
-                  <a
-                    target="_blank"
-                    href="https://wa.me/573243158514?text=%C2%A1Hola%20Iglesia%20del%20Nazareno!%20Deseo%20saber%20m%C3%A1s%20de%20la%20iglesia."
-                    rel="noreferrer"
-                  >
-                    +57 324 3158514
+                  <a target="_blank" href={whatsappUrl} rel="noopener noreferrer">
+                    {siteData.phone}
                   </a>
                 </Text>
               </ContactItem>
-              <Button hoverStyle="secondary" label="Contáctanos" />
+              <Button href="/contact#contact-form" hoverStyle="secondary" label="Contáctanos" />
             </div>
           </LinksColumn>
         </LinksWrapper>

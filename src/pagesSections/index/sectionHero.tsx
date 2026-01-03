@@ -4,6 +4,8 @@ import gsap from 'gsap';
 import Image from 'next/image';
 import React, { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
+import Button from '../../components/button';
+import { whatsappUrl } from '../../data/siteData';
 
 const Wrapper = styled.div`
   max-width: 1440px;
@@ -84,6 +86,36 @@ const Subtitle = styled.h2`
   }
 `;
 
+const HeroDescription = styled.p`
+  max-width: 520px;
+  font-family: Outfit;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 28px;
+  color: #2e2e2e;
+  margin: 0 0 28px;
+  position: relative;
+  z-index: 1;
+`;
+
+const HeroActions = styled.div`
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 1;
+`;
+
+const HeroSecondaryButton = styled(Button)`
+  background: transparent;
+  color: #111111;
+  border: 2px solid #111111;
+
+  &:hover {
+    background: #111111;
+    color: #ffffff;
+  }
+`;
 const HeroSection = styled.section`
   height: 100vh;
   max-height: 940px;
@@ -114,9 +146,7 @@ const Aff = styled.div`
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: var(--background-main);
-    mix-blend-mode: normal;
-    opacity: 0.9;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.72));
     z-index: 1;
   }
 `;
@@ -125,7 +155,7 @@ const ImageLayer = styled.div`
   position: absolute;
   inset: 0;
   opacity: 0;
-  filter: grayscale(1);
+  filter: grayscale(0.35);
 `;
 
 const CarouselWrapper = styled.div`
@@ -198,10 +228,22 @@ const Carousel = () => {
 
 const SectionHero: React.FC = () => {
   return (
-    <HeroSection>
+    <HeroSection id="home">
       <Wrapper>
         <MainTitle>Bienvenido a un lugar de nuevos comienzos</MainTitle>
         <Subtitle>Iglesia del Nazareno en Barranquilla</Subtitle>
+        <HeroDescription>
+          Una comunidad cercana donde puedes crecer en fe, encontrar apoyo y servir junto a otros.
+        </HeroDescription>
+        <HeroActions>
+          <Button href="/contact#map" hoverStyle="primary" label="Planifica tu visita" />
+          <HeroSecondaryButton
+            href={whatsappUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            label="Hablar por WhatsApp"
+          />
+        </HeroActions>
       </Wrapper>
       <Aff>
         <Carousel />

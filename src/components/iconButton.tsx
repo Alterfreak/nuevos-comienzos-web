@@ -76,6 +76,7 @@ type Props = {
   type?: 'filled' | 'default';
   className?: string;
   onClick: () => void;
+  ariaLabel?: string;
 };
 
 const IconButton: React.FC<Props> = ({
@@ -85,26 +86,39 @@ const IconButton: React.FC<Props> = ({
   kind = 'primary',
   hoverStyle = 'primary',
   type = 'default',
+  ariaLabel,
 }) => {
   let Icon = null;
+  let fallbackLabel = 'Acción';
   switch (iconName) {
     case 'menu':
       Icon = <BiMenu size={40} />;
+      fallbackLabel = 'Abrir menú';
       break;
     case 'close':
       Icon = <BiX size={40} />;
+      fallbackLabel = 'Cerrar menú';
       break;
     case 'chevron-right':
       Icon = <BiChevronRight size={40} />;
+      fallbackLabel = 'Siguiente';
       break;
     case 'chevron-left':
       Icon = <BiChevronLeft size={40} />;
+      fallbackLabel = 'Anterior';
       break;
     default:
       break;
   }
   return (
-    <StyledButton onClick={onClick} type={type} className={className} kind={kind} $hoverStyle={hoverStyle}>
+    <StyledButton
+      onClick={onClick}
+      type={type}
+      className={className}
+      kind={kind}
+      $hoverStyle={hoverStyle}
+      aria-label={ariaLabel ?? fallbackLabel}
+    >
       {Icon}
     </StyledButton>
   );

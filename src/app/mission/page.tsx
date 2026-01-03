@@ -1,12 +1,12 @@
-import type { Metadata } from 'next';
-
 import pageData from '../../data/pageData';
+import { createMetadata } from '../../lib/seo';
 import MissionPageClient from './page-client';
 
-export const metadata: Metadata = {
-  title: pageData.articles.title,
-  description: pageData.articles.description,
-};
+export const metadata = createMetadata({
+  title: pageData.mission.title,
+  description: pageData.mission.description,
+  path: '/mission',
+});
 
 const MissionPage = () => {
   return <MissionPageClient />;

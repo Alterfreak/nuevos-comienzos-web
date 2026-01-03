@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Script from 'next/script';
 import StyledComponentsRegistry from '../lib/styled-components-registry';
 import pageData from '../data/pageData';
+import siteData from '../data/siteData';
 import '../styles/font.css';
 import '../styles/global.css';
 import '../styles/slick.css';
@@ -15,14 +16,39 @@ export const metadata: Metadata = {
   description: pageData.index.description,
   openGraph: {
     type: 'website',
-    title: 'Iglesia del Nazareno - Nuevos Comienzos',
-    description: 'Iglesia del Nazareno en Barranquilla, Colombia. ¡Ven y visítanos!',
+    title: siteData.name,
+    description: siteData.description,
     url: appUrl,
-    images: ['/images/ancho-oscuro-norte-padding.webp'],
+    images: [siteData.ogImage],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: siteData.name,
+    description: siteData.description,
+    images: [siteData.ogImage],
   },
   icons: {
     icon: '/icon.webp',
   },
+};
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Church',
+  name: siteData.name,
+  url: appUrl,
+  description: siteData.description,
+  telephone: siteData.phone,
+  image: [new URL(siteData.ogImage, appUrl).toString()],
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: siteData.address.streetAddress,
+    addressLocality: siteData.address.addressLocality,
+    addressRegion: siteData.address.addressRegion,
+    addressCountry: siteData.address.addressCountry,
+  },
+  sameAs: [siteData.social.facebook, siteData.social.instagram],
+  logo: new URL(siteData.logo, appUrl).toString(),
 };
 
 const RootLayout: React.FC<React.PropsWithChildren> = ({ children }) => {
@@ -30,6 +56,7 @@ const RootLayout: React.FC<React.PropsWithChildren> = ({ children }) => {
     <html lang="es">
       <body suppressHydrationWarning>
         <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
         <Script src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`} strategy="afterInteractive" />
         <Script id="gtag-init" strategy="afterInteractive">
           {`window.dataLayer = window.dataLayer || [];

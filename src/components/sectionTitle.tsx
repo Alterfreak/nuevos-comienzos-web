@@ -89,10 +89,10 @@ type Props = {
   center?: boolean;
   light?: boolean;
   className?: string;
-  tag?: 'h1';
+  tag?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 };
 
-const SectionTitle: React.FC<Props> = ({ tag, className, title, subtitle, center = false, light = false }) => {
+const SectionTitle: React.FC<Props> = ({ tag = 'h2', className, title, subtitle, center = false, light = false }) => {
   return (
     <Wrapper className={className} $center={center} $light={light}>
       {subtitle && <SubTitle>{subtitle}</SubTitle>}

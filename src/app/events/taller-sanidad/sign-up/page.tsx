@@ -1,13 +1,14 @@
 import React from 'react';
-import type { Metadata } from 'next';
 
 import pageData from '../../../../data/pageData';
+import { createMetadata } from '../../../../lib/seo';
 import SignUpClient from './sign-up-client';
 
-export const metadata: Metadata = {
-  title: pageData.contact.title,
-  description: pageData.contact.description,
-};
+export const metadata = createMetadata({
+  title: pageData.eventSanidad.title,
+  description: pageData.eventSanidad.description,
+  path: '/events/taller-sanidad/sign-up',
+});
 
 const SignUpPage: React.FC = () => {
   return <SignUpClient />;

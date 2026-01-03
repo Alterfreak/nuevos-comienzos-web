@@ -2,10 +2,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@200;400;500;600;700&display=swap');
 
 body {
-  --background-main: #FFFFFF;
+  --background-main: #ffffff;
   --background-secondary: #111111;
 
-  --color-primary: #7ED957;
+  --color-primary: #7ed957;
 
   --text-primary: #111111;
 
@@ -15,6 +15,15 @@ body {
   background-color: var(--background-main);
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 a {
   text-decoration: none;
+}
+
+a:focus-visible {
+  outline: 2px solid rgba(126, 217, 87, 0.6);
+  outline-offset: 2px;
 }

@@ -62,7 +62,7 @@ const MinistriesPageClient: React.FC = () => {
               <br />
             </SectionDescription>
 
-            <Button hoverStyle="primary" label="Involucrarme" />
+            <Button href="/contact#contact-form" hoverStyle="primary" label="Involucrarme" />
           </TextWrapper>
           <LogoWrapper>
             <Image
@@ -101,7 +101,7 @@ const MinistriesPageClient: React.FC = () => {
               ¡Te invitamos a que puedas hacer tu contribución a este ministerio!
             </SectionDescription>
 
-            <Button hoverStyle="primary" label="¡Quiero ayudar!" />
+            <Button href="/contact#contact-form" hoverStyle="primary" label="¡Quiero ayudar!" />
           </TextWrapper>
         </Wrapper>
       </StyledSection>
@@ -116,7 +116,7 @@ const MinistriesPageClient: React.FC = () => {
               <br />
             </SectionDescription>
 
-            <Button hoverStyle="primary" label="¡Quiero saber más!" />
+            <Button href="/contact#contact-form" hoverStyle="primary" label="¡Quiero saber más!" />
           </TextWrapper>
           <LogoWrapper>
             <Image
@@ -151,7 +151,7 @@ const MinistriesPageClient: React.FC = () => {
               <br />
             </SectionDescription>
 
-            <Button hoverStyle="primary" label="¡Quiero saber más!" />
+            <Button href="/contact#contact-form" hoverStyle="primary" label="¡Quiero saber más!" />
           </TextWrapper>
         </Wrapper>
       </StyledSection>
@@ -166,7 +166,7 @@ const MinistriesPageClient: React.FC = () => {
               <br />
             </SectionDescription>
 
-            <Button hoverStyle="primary" label="¡Quiero aprender!" />
+            <Button href="/contact#contact-form" hoverStyle="primary" label="¡Quiero aprender!" />
           </TextWrapper>
           <LogoWrapper>
             <Image
