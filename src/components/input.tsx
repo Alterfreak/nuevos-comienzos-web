@@ -42,13 +42,22 @@ type Props = {
   id?: string;
   type?: React.HTMLInputTypeAttribute;
   required?: boolean;
+  defaultValue?: string;
+  placeholder?: string;
 };
 
-const Input: React.FC<Props> = ({ label, type, required, name, id }) => {
+const Input: React.FC<Props> = ({ label, type, required, name, id, defaultValue, placeholder }) => {
   return (
     <Wrapper>
       {label && <Label htmlFor={id}>{label}</Label>}
-      <StyledInput type={type} name={name} id={id} required={required} />
+      <StyledInput
+        type={type}
+        name={name}
+        id={id}
+        required={required}
+        defaultValue={defaultValue}
+        placeholder={placeholder}
+      />
     </Wrapper>
   );
 };

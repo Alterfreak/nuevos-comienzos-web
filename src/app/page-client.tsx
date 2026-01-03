@@ -9,6 +9,7 @@ import Section from '../components/section';
 import SectionGroups from '../pagesSections/index/sectionGroups';
 import SectionActivities from '../pagesSections/index/sectionActivities';
 import SectionHero from '../pagesSections/index/sectionHero';
+import SectionEvents from '../pagesSections/index/sectionEvents';
 
 const GridRow = styled.div<{ $columns: number }>`
   display: grid;
@@ -52,6 +53,7 @@ const IndexPage: React.FC = () => {
     <Layout>
       <SectionHero />
       <SectionActivities />
+      <SectionEvents />
       <SectionGroups />
       <Section>
         <GridRow $columns={3}>

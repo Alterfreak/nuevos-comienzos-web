@@ -1,6 +1,7 @@
 'use client';
 
-import React, { useRef } from 'react';
+import React, { useMemo, useRef } from 'react';
+import { useSearchParams } from 'next/navigation';
 import styled from 'styled-components';
 
 import PageLayout from '../../components/pageLayout';
@@ -58,6 +59,12 @@ const Wrapper = styled.div`
 
 const ContactClient: React.FC = () => {
   const formRef = useRef<HTMLFormElement>(null);
+  const searchParams = useSearchParams();
+  const interest = searchParams.get('interest')?.trim();
+  const prefilledMessage = useMemo(() => {
+    if (!interest) return '';
+    return `Hola, quiero recibir información sobre ${interest}.`;
+  }, [interest]);
 
   return (
     <PageLayout title="Contáctanos">
@@ -104,6 +111,7 @@ const ContactClient: React.FC = () => {
                 }
               }}
             >
+              {interest && <input type="hidden" name="interest" value={interest} />}
               <FormRow>
                 <Input name="name" type="text" id="firstName" label="Tu nombre" required />
                 <Input name="lastName" type="text" id="lastName" label="Tu apellido" required />
@@ -112,7 +120,7 @@ const ContactClient: React.FC = () => {
                 <Input name="email" type="email" id="email" label="Tu email" />
                 <Input name="phone" type="tel" id="phone" label="Tu teléfono" />
               </FormRow>
-              <Textarea required name="message" id="message" label="Tu mensaje" />
+              <Textarea required name="message" id="message" label="Tu mensaje" defaultValue={prefilledMessage} />
               <FormRow>
                 <div />
                 <Button type="submit" hoverStyle="primary" label="Enviar mensaje" />

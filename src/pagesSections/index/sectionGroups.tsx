@@ -8,6 +8,8 @@ import Section from '../../components/section';
 import SectionTitle from '../../components/sectionTitle';
 import InfoItem from '../../components/infoItem';
 import SectionDescription from '../../components/sectionDescription';
+import Button from '../../components/button';
+import { connectionGroups } from '../../data/activities';
 
 const Wrapper = styled.div`
   display: grid;
@@ -31,6 +33,10 @@ const ItemList = styled.div`
   }
 `;
 
+const GroupActions = styled.div`
+  margin-top: 24px;
+`;
+
 const StyledSection = styled(Section)`
   background-image: url('/images/barranquilla-skyline.webp');
   position: relative;
@@ -51,27 +57,6 @@ const StyledSection = styled(Section)`
   }
 `;
 
-const groups = [
-  {
-    id: 'group1',
-    title: 'Alameda del Río',
-    description: 'Todos los LUNES a las 7pm',
-    link: 'https://maps.app.goo.gl/44Mejoa7TyoamTHE9',
-  },
-  {
-    id: 'group3',
-    title: 'Kalamary',
-    description: 'Todos los JUEVES a las 7pm',
-    link: 'https://maps.app.goo.gl/44Mejoa7TyoamTHE9',
-  },
-  {
-    id: 'group4',
-    title: 'Miramar',
-    description: 'Todos los VIERNES a las 7pm',
-    link: 'https://maps.app.goo.gl/44Mejoa7TyoamTHE9',
-  },
-];
-
 const SectionGroups: React.FC = () => {
   return (
     <StyledSection transparent>
@@ -80,24 +65,27 @@ const SectionGroups: React.FC = () => {
           <SectionTitle subtitle="visitános en" title="Grupos de conexión" light />
 
           <SectionDescription $light>
-            Nos reunimos semanalmente en diferentes horarios, días y puntos de la ciudad para compartir la palabra de
-            Dios y tener conversaciones significativas.
+            Nos reunimos en casas en distintos barrios para compartir la Palabra y cuidarnos en comunidad.
             <br />
-            Ven, únete y crece en tu fe mientras te conectas con otros creyentes.
+            La ubicación exacta se comparte al inscribirte.
           </SectionDescription>
 
-          {/* <Button hoverStyle="secondary" label="Información" /> */}
+          <GroupActions>
+            <Button
+              href={`/contact?interest=${encodeURIComponent('Grupos de conexión')}`}
+              hoverStyle="secondary"
+              label="Quiero unirme"
+            />
+          </GroupActions>
         </div>
         <ItemList>
-          {groups.map(g => (
+          {connectionGroups.map(g => (
             <InfoItem
-              href={g.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              ariaLabel={`Abrir ubicación de ${g.title} en Google Maps`}
+              href={`/contact?interest=${encodeURIComponent(`Grupo de conexión en ${g.title} (${g.day} ${g.time})`)}`}
+              ariaLabel={`Pedir información del grupo de conexión en ${g.title}`}
               light
               title={g.title}
-              description={g.description}
+              description={`${g.day} · ${g.time}`}
               key={g.id}
               Icon={<BiRadioCircleMarked size={80} />}
             />

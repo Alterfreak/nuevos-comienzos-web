@@ -41,13 +41,15 @@ type Props = {
   name?: string;
   id?: string;
   required?: boolean;
+  defaultValue?: string;
+  placeholder?: string;
 };
 
-const Textarea: React.FC<Props> = ({ label, required, name, id }) => {
+const Textarea: React.FC<Props> = ({ label, required, name, id, defaultValue, placeholder }) => {
   return (
     <Wrapper>
       {label && <Label htmlFor={id}>{label}</Label>}
-      <StyledInput required={required} name={name} id={id} />
+      <StyledInput required={required} name={name} id={id} defaultValue={defaultValue} placeholder={placeholder} />
     </Wrapper>
   );
 };
