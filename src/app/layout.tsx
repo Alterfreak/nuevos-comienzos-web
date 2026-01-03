@@ -1,8 +1,10 @@
 import type { Metadata } from 'next';
 import Script from 'next/script';
+import { Suspense } from 'react';
 import StyledComponentsRegistry from '../lib/styled-components-registry';
 import pageData from '../data/pageData';
 import siteData from '../data/siteData';
+import Analytics from '../components/analytics';
 import '../styles/font.css';
 import '../styles/global.css';
 import '../styles/slick.css';
@@ -59,8 +61,11 @@ const RootLayout: React.FC<React.PropsWithChildren> = ({ children }) => {
     <html lang="es">
       <body suppressHydrationWarning>
         <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
+        <Suspense fallback={null}>
+          <Analytics />
+        </Suspense>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-        <Script src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`} strategy="afterInteractive" />
+        <Script src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`} strategy="lazyOnload" />
         <Script id="gtag-init" strategy="afterInteractive">
           {`window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
