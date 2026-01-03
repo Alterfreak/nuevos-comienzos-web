@@ -10,7 +10,7 @@ import SectionTitle from '../../components/sectionTitle';
 import IconButton from '../../components/iconButton';
 import events from '../../data/eventSlider';
 
-const StyledSlider = styled(Slider)`
+const StyledSlider = styled(Slider as React.ComponentClass<any>)`
   .slick-list {
     height: 450px;
   }

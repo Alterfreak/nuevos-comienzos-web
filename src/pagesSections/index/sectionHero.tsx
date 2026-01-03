@@ -139,7 +139,7 @@ const images = ['/images/about/about-pic-1.jpeg', '/images/about/about-pic-2.jpe
 const Carousel = () => {
   const [, setCurrentIndex] = useState(0);
   const imageRefs = useRef<(HTMLDivElement | null)[]>([]);
-  const intervalRef = useRef<NodeJS.Timeout>();
+  const intervalRef = useRef<NodeJS.Timeout | null>(null);
 
   const triggerNextImage = () => {
     setCurrentIndex(prevIndex => {
@@ -161,7 +161,11 @@ const Carousel = () => {
       triggerNextImage();
     }, 5000);
 
-    return () => clearInterval(intervalRef.current);
+    return () => {
+      if (intervalRef.current) {
+        clearInterval(intervalRef.current!);
+      }
+    };
   }, []);
 
   return (

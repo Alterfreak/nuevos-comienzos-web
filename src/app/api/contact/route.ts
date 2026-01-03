@@ -7,7 +7,7 @@ export const runtime = 'nodejs';
 
 type ContactMessage = Record<string, string> & {
   id: string;
-  date: number;
+  date: string;
 };
 
 export const POST = async (request: Request) => {
@@ -16,7 +16,7 @@ export const POST = async (request: Request) => {
     const message: ContactMessage = {
       ...payload,
       id: randomUUID(),
-      date: Date.now(),
+      date: new Date().toISOString(),
     };
 
     const messages = await readJson<ContactMessage[]>('contact.json', []);
