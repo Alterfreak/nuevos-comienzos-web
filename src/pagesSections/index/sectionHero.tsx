@@ -108,12 +108,13 @@ const HeroActions = styled.div`
 
 const HeroSecondaryButton = styled(Button)`
   background: transparent;
-  color: #111111;
-  border: 2px solid #111111;
+  color: var(--color-primary-text);
+  border: 2px solid var(--color-primary-text);
 
   &:hover {
-    background: #111111;
+    background: var(--color-primary-text);
     color: #ffffff;
+    border-color: transparent;
   }
 `;
 const HeroSection = styled.section`
@@ -164,7 +165,7 @@ const CarouselWrapper = styled.div`
   height: 100%;
 `;
 
-const images = ['/images/about/about-pic-1.jpeg', '/images/about/about-pic-2.jpeg', '/images/about/about-pic-3.jpeg'];
+const images = ['/images/about/about-pic-1.avif', '/images/about/about-pic-2.avif', '/images/about/about-pic-3.avif'];
 
 const Carousel = () => {
   const [, setCurrentIndex] = useState(0);
@@ -213,6 +214,7 @@ const Carousel = () => {
             fill
             sizes="100vw"
             priority={index === 0}
+            quality={60}
             style={{ objectFit: 'cover' }}
             onLoadingComplete={() => {
               if (index === 0 && imageRefs.current[0]) {

@@ -146,7 +146,7 @@ const Navbar: React.FC = () => {
         ))}
       </LinksWrapperVertical>
       <DrawerActions>
-        <Button href="/contact#map" hoverStyle="secondary" label="Visítanos" />
+        <Button href="/contact#map" hoverStyle="primary" label="Visítanos" />
         <Button href="/contact#contact-form" hoverStyle="primary" label="Escríbenos" />
       </DrawerActions>
     </Drawer>
@@ -181,7 +181,7 @@ const Navbar: React.FC = () => {
           ))}
         </LinksWrapper>
         <NavActions>
-          <Button href="/contact#map" hoverStyle="secondary" label="Visítanos" />
+          <Button href="/contact#map" hoverStyle="primary" label="Visítanos" />
         </NavActions>
       </Wrapper>
     </>

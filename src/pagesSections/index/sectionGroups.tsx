@@ -73,7 +73,7 @@ const SectionGroups: React.FC = () => {
           <GroupActions>
             <Button
               href={`/contact?interest=${encodeURIComponent('Grupos de conexión')}`}
-              hoverStyle="secondary"
+              hoverStyle="primary"
               label="Quiero unirme"
             />
           </GroupActions>

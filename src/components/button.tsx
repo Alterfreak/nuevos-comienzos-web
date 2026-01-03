@@ -5,7 +5,7 @@ import Link from 'next/link';
 import styled, { css } from 'styled-components';
 
 const buttonStyles = css<{ $hoverStyle: 'primary' | 'secondary' }>`
-  color: #fff;
+  color: var(--color-primary-text);
   background: var(--color-primary);
   border: 0;
   cursor: pointer;
@@ -32,8 +32,9 @@ const buttonStyles = css<{ $hoverStyle: 'primary' | 'secondary' }>`
         `;
       }
       return css`
-        background: #121212;
+        background: var(--color-primary-strong);
         color: white;
+        border-color: var(--color-primary-strong);
       `;
     }}
   }

@@ -284,7 +284,7 @@ const Footer: React.FC = () => {
                   </a>
                 </Text>
               </ContactItem>
-              <Button href="/contact#contact-form" hoverStyle="secondary" label="Contáctanos" />
+              <Button href="/contact#contact-form" hoverStyle="primary" label="Contáctanos" />
             </div>
           </LinksColumn>
         </LinksWrapper>

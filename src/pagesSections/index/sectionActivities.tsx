@@ -99,7 +99,7 @@ const SectionActivities: React.FC = () => {
             <ActivityActions>
               <Button
                 href={`/contact?interest=${encodeURIComponent(activity.interest)}`}
-                hoverStyle="secondary"
+                hoverStyle="primary"
                 label="Pedir info"
               />
             </ActivityActions>

@@ -14,6 +14,8 @@ export const metadata: Metadata = {
   metadataBase: new URL(appUrl),
   title: pageData.index.title,
   description: pageData.index.description,
+  manifest: '/manifest.webmanifest',
+  themeColor: '#7ed957',
   openGraph: {
     type: 'website',
     title: siteData.name,
@@ -29,6 +31,7 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: '/icon.webp',
+    apple: '/apple-touch-icon.png',
   },
 };
 
